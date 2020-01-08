@@ -965,6 +965,11 @@ div.widget_gtranslate select option {
   #wpadminbar #wp-admin-bar-edit {
     display: initial !important;
   }
+
+  // Entfernen des eigenartigen Margins bei kleinen Bildschirmen.
+  html, body {
+    margin-top: 0px !important;
+  }
 }
 
 // -----------------------------------------------------------------------------
