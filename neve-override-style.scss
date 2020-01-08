@@ -1646,6 +1646,39 @@ input[name*='tribe-bar-']:-moz-placeholder {
 //
 // -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+//
+// [Print View]
+//
+// -----------------------------------------------------------------------------
+
+@mixin reset {
+  background: initial !important;
+  color: initial !important;
+  height: initial !important;
+  width: initial !important;
+  border: initial !important;
+  overflow: initial !important;
+  box-shadow: initial !important;
+  max-height: initial !important;
+  max-width: initial !important;
+}
+
+@media print {
+  .nv-navbar, #pojo-a11y-toolbar, #site-footer, #cookie-law-info-bar, #cookie-law-info-again {
+    display: none !important;
+  }
+  html, body, div {
+    @include reset;
+  }
+}
+
+// -----------------------------------------------------------------------------
+//
+// [/Print View]
+//
+// -----------------------------------------------------------------------------
+
 /*
  * ===========================
  * [/Customizer/Additional CSS]
