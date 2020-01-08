@@ -321,10 +321,6 @@ a.neve-skip-link:focus {
   color: $color-logo;
 }
 
-.nv-navbar {
-  background-color: $neve-fff;
-}
-
 .primary-menu-ul a {
   color: $color-text;
 }
@@ -887,6 +883,21 @@ body {
   background: -moz-linear-gradient(45deg,  rgb(237, 237, 237) 0%, rgb(252, 252, 252) 100%); // FF3.6-15
   background: -webkit-linear-gradient(45deg,  rgb(237, 237, 237) 0%,rgb(252, 252, 252) 100%); // Chrome10-25,Safari5.1-6
   background: linear-gradient(45deg,  rgb(237, 237, 237) 0%,rgb(252, 252, 252) 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#fcfcfc',GradientType=1 ); // IE6-9 fallback on horizontal gradient
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.nv-navbar {
+  margin-bottom: 10px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nv-navbar .light-mode {
+  background-color: rgb(237,237,237); // Old browsers
+  background-color: -moz-linear-gradient(45deg,  rgb(237, 237, 237) 0%, rgb(252, 252, 252) 100%); // FF3.6-15
+  background-color: -webkit-linear-gradient(45deg,  rgb(237, 237, 237) 0%,rgb(252, 252, 252) 100%); // Chrome10-25,Safari5.1-6
+  background-color: linear-gradient(45deg,  rgb(237, 237, 237) 0%,rgb(252, 252, 252) 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#fcfcfc',GradientType=1 ); // IE6-9 fallback on horizontal gradient
   background-repeat: no-repeat;
   background-attachment: fixed;
