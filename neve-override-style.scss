@@ -986,6 +986,12 @@ div.widget_gtranslate select option {
 //
 // -----------------------------------------------------------------------------
 
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle {
+  -webkit-box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
 #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
   background-color: $color-blue !important;
   color: $color-white !important;
