@@ -978,6 +978,58 @@ div.widget_gtranslate select option {
 //
 // -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+//
+// [One Click Accessibility Overrides]
+//
+// Plugin: https://de.wordpress.org/plugins/pojo-accessibility/
+//
+// -----------------------------------------------------------------------------
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a {
+  background-color: $color-blue !important;
+  color: $color-white !important;
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay, #pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items.pojo-a11y-links {
+  border-color: $color-blue !important;
+}
+
+body.pojo-a11y-focusable a:focus {
+  outline-style: solid !important;
+  outline-width: 1px !important;
+  outline-color: $color-red !important;
+}
+
+#pojo-a11y-toolbar {
+  top: 46px !important;
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay {
+  background-color: $color-white !important;
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items li.pojo-a11y-toolbar-item a, #pojo-a11y-toolbar .pojo-a11y-toolbar-overlay p.pojo-a11y-toolbar-title {
+  color: $color-black !important;
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items li.pojo-a11y-toolbar-item a.active {
+  background-color: shade($color-blue, 10%);
+  color: $color-white !important;
+}
+
+@media (max-width: 767px) {
+  #pojo-a11y-toolbar {
+    top: 46px !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+//
+// [/One Click Accessibility Overrides]
+//
+// -----------------------------------------------------------------------------
+
 /*
  * ===========================
  * [/Customizer/Additional CSS]
