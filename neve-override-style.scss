@@ -941,6 +941,38 @@ div.widget_gtranslate select option {
 //
 // -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+//
+// [WordPress Admin Bar Overrides]
+//
+// -----------------------------------------------------------------------------
+
+@media (max-width: 600px) {
+  // Admin Bar Icons in der mobilen Ansicht auf das nötigste reduzieren.
+  // Da Plugins u. U. Elemente hinzufügen, wird hier eine Whitelist
+  // verwendet.
+  #wpadminbar li[id*="wp-admin-bar"] {
+    display: none !important;
+  }
+
+  #wpadminbar {
+    position: absolute;
+    top: 0px;
+    max-width: fit-content;
+    min-width: 46px !important;
+  }
+
+  #wpadminbar #wp-admin-bar-edit {
+    display: initial !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+//
+// [/WordPress Admin Bar Overrides]
+//
+// -----------------------------------------------------------------------------
+
 /*
  * ===========================
  * [/Customizer/Additional CSS]
