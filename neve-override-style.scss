@@ -874,12 +874,12 @@ a.brand {
 }
 
 // Header-Menü: Workaround für abgeschnittene Unterstreichung auf der linken Seite (Hover-Effekt).
-#secondary-menu li:first-child {
+#secondary-menu li:first-child a {
   padding-left:10px;
 }
 
 // Header-Menü: Workaround für abgeschnittene Unterstreichung auf der rechten Seite. (Hover-Effekt)
-#secondary-menu li:last-child {
+#secondary-menu li:last-child a {
   padding-right:10px;
 }
 
