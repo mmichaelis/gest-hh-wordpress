@@ -689,6 +689,24 @@ hr {
 //
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@media (max-width: 576px) {
+  .builder-item--logo .site-logo {
+    padding-right: 50px !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .builder-item--logo .site-logo {
+    padding-right: 50px !important;
+  }
+}
+
+@media (min-width: 961px) {
+  .builder-item--logo .site-logo {
+    padding-right: 50px !important;
+  }
+}
+
 body, .site-title {
   font-family: $font-text !important;
 }
@@ -863,9 +881,39 @@ ul[id^="nv-primary-navigation"] li.button.button-primary>a, .menu li.button.butt
 //
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Grauverlauf im Hintergrund
+body {
+  background: rgb(237,237,237); // Old browsers
+  background: -moz-linear-gradient(45deg,  rgb(237, 237, 237) 0%, rgb(252, 252, 252) 100%); // FF3.6-15
+  background: -webkit-linear-gradient(45deg,  rgb(237, 237, 237) 0%,rgb(252, 252, 252) 100%); // Chrome10-25,Safari5.1-6
+  background: linear-gradient(45deg,  rgb(237, 237, 237) 0%,rgb(252, 252, 252) 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#fcfcfc',GradientType=1 ); // IE6-9 fallback on horizontal gradient
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+// Posts Übersicht ein wenig hervorheben.
+.wp-block-themeisle-blocks-posts-grid {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+}
+
 // GEST-Logo: Die Schriftfarbe muss hart überschrieben werden.
 a.brand {
   color: $color-black !important;
+}
+
+// Anpassung des Schattens bei der Posts-Übersicht
+.wp-block-themeisle-blocks-posts-grid .posts-grid-post-blog .posts-grid-post .posts-grid-post-image img {
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.5);
+}
+
+// Bild in Postings zentrieren.
+.nv-thumb-wrap img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // GEST-Logo: Umbrüche reduzieren, indem eine Mindestbreite zur Verfügung gestellt wird.
