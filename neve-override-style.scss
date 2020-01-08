@@ -1,0 +1,913 @@
+@charset 'UTF-8';
+/*
+ * ===========================
+ * [Customizer/Additional CSS]
+ * ===========================
+ */
+// =============================================================================
+//
+// Sassy CSS (SCSS) für die Website der GEST
+//
+// Hinweis: Zeilenkommentare (//) werden bei der CSS Erzeugung entfernt,
+//          Blockkommentare (/* ... */) hingegen werden beibehalten.
+//
+// Voraussetzung:
+//   - Jetpack von WordPress.com [https://de.wordpress.org/plugins/jetpack/]
+//     Wird benötigt, damit CSS Präprozessoren verwendet werden können, die
+//     Variablen in dieser Datei auflösen.
+//   - Jetpack/Einstellungen/Schreiben/CSS-Anpassungsbereich optimieren
+//     Dies Einstellung muss aktiviert sein.
+//
+// Installation:
+//   - Design/Customizer auswählen.
+//   - Zusätzliches CSS öffnen.
+//   - Dieses Skript in das Textfeld kopieren.
+//   - Als Präprozessor "Sass (SCSS)" auswählen.
+//
+// Hinweise:
+//   - (Original: ...)
+//     Markiert Originalwerte aus dem Theme bzw. aus dem Plugin
+//
+// Links:
+//   - https://www.htmlcsscolor.com/
+//   - https://www.rgbtohex.net/
+//   - https://www.sassmeister.com/
+//   - https://sass-guidelin.es/de/
+//
+// =============================================================================
+
+// Import der Schriftarten für font-weight 400 und 600.
+// Überschriften/Text: https://fonts.google.com/specimen/Open+Sans
+// GEST CI Schriftzug: https://fonts.google.com/specimen/Mitr
+@import url('https://fonts.googleapis.com/css?family=Mitr:400,600|Open+Sans:400,400i,600,600i&display=swap');
+
+// -----------------------------------------------------------------------------
+//
+// GEST CI Farben
+//
+// Palette erstellt: https://paletton.com/#uid=75B110kw0w0jyC+oRxVy4oIDfjr
+// Sonderfarbe: rgb(55, 86, 177); #3756b1 (für das Dach im Logo)
+//
+// -----------------------------------------------------------------------------
+
+$color-red: rgb(251, 0, 13); // Name: Torch Red, Hex: #FB000D, https://www.htmlcsscolor.com/hex/FB000D
+$color-yellow: rgb(255, 174, 0); // Name: Orange, Hex: #FFAE00, https://www.htmlcsscolor.com/hex/FFAE00
+$color-blue: rgb(19, 58, 172); // Name: Egyptian Blue, Hex: #133AAC, https://www.htmlcsscolor.com/hex/133AAC
+$color-green: rgb(20, 209, 0); // Name: Free Speech Green, Hex: #14D100, https://www.htmlcsscolor.com/hex/14D100
+$color-roof: rgb(55, 86, 177); // Name: Cerulean Blue, Hex: #3756B1, https://www.htmlcsscolor.com/hex/3756B1
+
+// -----------------------------------------------------------------------------
+//
+// Weitere Farben
+//
+// -----------------------------------------------------------------------------
+
+$color-white: rgb(255, 255, 255); // Name: White, Hex: $neve-ffffff oder $neve-fff, https://www.htmlcsscolor.com/hex/FFFFFF
+$color-black: rgb(0, 0, 0); // Name: Black, Hex: $neve-000000 oder #000, https://www.htmlcsscolor.com/hex/000000
+$color-gray: rgb(128, 128, 128); // Name: Gray, Hex: #808080, https://www.htmlcsscolor.com/hex/808080
+
+// -----------------------------------------------------------------------------
+//
+// Farbfunktionen
+//
+// -----------------------------------------------------------------------------
+
+/// Hellt eine Farbe leicht auf.
+/// Verwendung: color: tint(pink, 30%);
+/// @access public
+/// @param {Color} $color - zu färbende Farbe
+/// @param {Number} $percentage - Prozent von `$color` welcher die Farbe wiedergegeben werden soll
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix($color-white, $color, $percentage);
+}
+
+/// Verdunkelt eine Farbe leicht.
+/// Verwendung: color: shade(pink, 30%);
+/// @access public
+/// @param {Color} $color - zu verdunkelnde Farbe
+/// @param {Number} $percentage - Prozent von `$color` welcher die Farbe wiedergegeben werden soll
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix($color-black, $color, $percentage);
+}
+
+// -----------------------------------------------------------------------------
+//
+// Neve Farb-Mappings
+//
+// neve-676767: Ursprünglich von Neve mit Farbwert $neve-676767 belegt.
+//
+// Die generelle Idee ist, alle Neve Farben abzubilden, und gleiche Farbwerte
+// aus Neve in den gleichen CI-Farbwert zu übersetzen. Auf die Weise sollte es
+// auch nach einem Update vom Neve einfach sein, ggf. Farbabbildungen
+// nachzureichen.
+//
+// Für neue Farben, sollte man als erstes mit einer Farbe starten, deren
+// Lightness-Wert ähnlich dem ursprünglichen ist. Beispielsweise auf diese
+// Weise in https://www.sassmeister.com/ berechenbar (tint und shade Funktionen
+// vorher ebenfalls hinzufügen):
+//
+//   $base: rgb(19, 58, 172);
+//   $neve: #c9c9c9;
+//   $calc: tint($base, 66%)
+//   body {
+//     color: $calc;
+//     lightness-base: lightness($base);
+//     lightness-neve: lightness($neve);
+//     lightness-calc: lightness($calc);
+//   }
+//
+//
+// Achtung: Die shade/tint-Funktion liefert in sassmeister leicht abweichende
+//          Ergebnisse im Vergleich zu Jetpack Sass Präprozessor.
+// -----------------------------------------------------------------------------
+
+$neve-000000: $color-black; // #000
+$neve-0366d6: tint($color-blue, 9%); // #284cb3
+$neve-24292e: shade($color-blue, 57%); // #08194a
+$neve-292929: shade($color-blue, 56%); // #081a4c
+$neve-333: shade($color-blue, 46%); // #0a1f5d
+$neve-404248: shade($color-blue, 28%); // #0e2a7c
+$neve-676767: tint($color-blue, 5%); // #1f44b0
+$neve-8f98a1: tint($color-blue, 36%); // #6881ca
+$neve-c9c9c9: tint($color-blue, 66%); // #afbce3
+$neve-d0effb: tint($color-blue, 85%); // #dce1f3
+$neve-d9dbdd: tint($color-blue, 77%); // #c9d2ec
+$neve-dddddd: tint($color-blue, 79%); // #cdd6ee
+$neve-ededed: tint($color-blue, 89%); // #e5e9f6
+$neve-eee: tint($color-blue, 90%); // #e7ebf7
+$neve-f0f0f0: tint($color-blue, 91%); // #eaedf8
+$neve-f9f9f9: tint($color-blue, 97%); // #f8f9fd
+$neve-fbfbfb: tint($color-blue, 98%); // #fafbfd
+$neve-fff: $color-white; // #fff
+$neve-ffffff: $color-white; // #fff
+
+/* Verwendet zum Debugging des Farb-Mappings (abhängig von Sass Präprozessor). */
+.custom-css-debug-neve {
+  color: $neve-000000; /* 000000 */
+  color: $neve-0366d6; /* 0366d6 */
+  color: $neve-24292e; /* 24292e */
+  color: $neve-292929; /* 292929 */
+  color: $neve-333; /* 333 */
+  color: $neve-404248; /* 404248 */
+  color: $neve-676767; /* 676767 */
+  color: $neve-8f98a1; /* 8f98a1 */
+  color: $neve-c9c9c9; /* c9c9c9 */
+  color: $neve-d0effb; /* d0effb */
+  color: $neve-d9dbdd; /* d9dbdd */
+  color: $neve-dddddd; /* dddddd */
+  color: $neve-ededed; /* ededed */
+  color: $neve-eee; /* eee */
+  color: $neve-f0f0f0; /* f0f0f0 */
+  color: $neve-f9f9f9; /* f9f9f9 */
+  color: $neve-fbfbfb; /* fbfbfb */
+  color: $neve-fff; /* fff */
+  color: $neve-ffffff; /* ffffff */
+}
+
+// -----------------------------------------------------------------------------
+//
+// Standard Farben
+//
+// -----------------------------------------------------------------------------
+
+$color-text: $neve-404248;
+$color-heading: $color-black;
+$color-logo: $color-black;
+
+// -----------------------------------------------------------------------------
+//
+// GEST CI Fonts
+//
+// Palette erstellt: https://paletton.com/#uid=75B110kw0w0jyC+oRxVy4oIDfjr
+// Sonderfarbe: rgb(55, 86, 177); #3756b1 (für das Dach im Logo)
+//
+// -----------------------------------------------------------------------------
+
+// Neve Standard Fonts als Fallback erhalten.
+$font-stack-neve: ('Graphik', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', sans-serif);
+$font-stack-ci-text: ('Open Sans Regular', 'Open Sans');
+$font-stack-ci-heading: ('Open Sans SemiBold', 'Open Sans');
+$font-stack-ci-logo: ('Mitr Regular', 'Mitr');
+
+$font-text: append($font-stack-ci-text, $font-stack-neve);
+$font-heading: append($font-stack-ci-heading, $font-stack-neve);
+$font-logo: append($font-stack-ci-logo, $font-stack-neve);
+
+// Nicht all Font Weights sind in den entsprechenden Fonts verfügbar.
+// Hier kann man zentral die entsprechenden Gewichte auf verfügbare
+// Werte abbilden.
+$font-weight-normal: 400; // Neve:400
+$font-weight-medium: 400; // Neve:500
+$font-weight-semi-bold: 600; // Neve:600
+$font-weight-bold: 600; // Neve:700
+
+@mixin font-text($with-color: true, $font-weight: $font-weight-normal) {
+  font-family: $font-text;
+  font-weight: $font-weight-normal;
+  @if $with-color {
+    color: $color-text;
+  }
+}
+
+@mixin font-heading($with-color: true, $font-weight: $font-weight-semi-bold) {
+  font-family: $font-heading;
+  font-weight: $font-weight;
+  @if $with-color {
+    color: $color-heading;
+  }
+}
+
+@mixin font-logo-text($with-color: true) {
+  font-family: $font-logo;
+  font-weight: $font-weight-normal;
+  @if $with-color {
+    color: $color-logo;
+  }
+}
+
+@mixin font-logo-heading {
+  font-family: $font-logo;
+  font-weight: $font-weight-semi-bold;
+}
+
+// -----------------------------------------------------------------------------
+//
+// [Neve Overrides]
+//
+// Theme: https://themeisle.com/themes/neve/
+//
+// Überschreibt die Standardkonfiguration von Neve, um sie der GEST CI
+// anzupassen.
+//
+// -----------------------------------------------------------------------------
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+// [neve/style.css]
+//
+// Anpassungen an den Standard-CSS Regeln
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.wp-block-button a, a.button.close-responsive-search, .button, button, input[type=button], .btn, input[type="submit"] {
+  font-weight: $font-weight-semi-bold;
+}
+
+.wp-block-button.is-style-outline a.wp-block-button__link, a.button.close-responsive-search, .button.button-secondary, #comments input[type=submit] {
+  font-weight: $font-weight-semi-bold;
+  color: $neve-676767;
+}
+
+.button.button-primary, button, input[type=button], .btn, input[type="submit"] {
+  background-color: $neve-0366d6;
+  color: $neve-fff;
+}
+
+.button.button-primary:hover, button:hover, input:hover[type=button], .btn:hover, input:hover[type="submit"] {
+  background-color: $neve-0366d6;
+  color: $neve-fff;
+}
+
+body {
+  @include font-text;
+  background-color: $neve-fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-heading;
+}
+
+a {
+  color: $neve-0366d6;
+}
+
+a:hover, a:focus {
+  color: $neve-0366d6;
+}
+
+a.neve-skip-link {
+  background-color: $neve-24292e;
+  color: $neve-fff;
+}
+
+a.neve-skip-link:focus {
+  color: $neve-fff;
+}
+
+.wp-block-separator {
+  background-color: $neve-8f98a1;
+}
+
+.nv-top-bar a {
+  font-weight: $font-weight-medium;
+}
+
+.site-logo h1, .site-logo p {
+  @include font-logo-heading;
+}
+
+.site-logo small {
+  @include font-logo-text;
+}
+
+.site-logo a {
+  color: $color-logo;
+}
+
+.site-logo a:hover {
+  color: $color-logo;
+}
+
+.nv-navbar {
+  background-color: $neve-fff;
+}
+
+.primary-menu-ul a {
+  color: $color-text;
+}
+
+.primary-menu-ul .sub-menu {
+  border-left: 1px solid $neve-f0f0f0;
+}
+
+.caret {
+  color: $neve-676767;
+}
+
+.caret-wrap {
+  border: 1px solid $neve-c9c9c9;
+}
+
+ul[id^="nv-primary-navigation"] .current-menu-item > a {
+  color: $neve-0366d6;
+}
+
+.menu-item-nav-search.responsive-nav-search .nv-nav-search {
+  background-color: $neve-fff;
+}
+
+.menu-item-nav-search.responsive-nav-search .nv-nav-search form .nv-search-icon-wrap {
+  color: $neve-c9c9c9;
+}
+
+.menu-item-nav-search.responsive-nav-search .nv-nav-search form input[type="submit"]:hover {
+  background-color: $neve-eee;
+}
+
+.nv-nav-search {
+  background: $neve-fff;
+  border-top: 1px solid $neve-f0f0f0;
+}
+
+.nv-nav-wrap .neve-mega-menu .neve-mm-col .sub-menu .sub-menu li {
+  border-bottom: 1px solid $neve-f0f0f0 !important;
+}
+
+.nv-nav-wrap .neve-mega-menu .neve-mm-heading a, .nv-nav-wrap .neve-mega-menu .neve-mm-heading span {
+  font-weight: $font-weight-bold;
+}
+
+.nv-nav-wrap .neve-mega-menu .neve-mm-divider {
+  background-color: $neve-c9c9c9;
+}
+
+footer {
+  background-color: $neve-fff;
+}
+
+.nv-page-title-wrap.nv-big-title .nv-page-title {
+  border-bottom: 1px solid $neve-f0f0f0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea {
+  color: $neve-333;
+  border: 1px solid $neve-dddddd;
+}
+
+input[type="color"],
+select {
+  color: $neve-333;
+  border: 1px solid $neve-dddddd;
+}
+
+.nv-seach-form-wrap {
+  border-top: 1px solid $neve-f0f0f0;
+}
+
+.search-form .nv-search-icon-wrap, .woocommerce-product-search .nv-search-icon-wrap {
+  color: $neve-c9c9c9;
+}
+
+.search-form button[type="submit"]:hover, .search-form input[type="submit"]:hover, .woocommerce-product-search button[type="submit"]:hover, .woocommerce-product-search input[type="submit"]:hover {
+  background-color: $neve-eee;
+}
+
+.nv-meta-list li {
+  color: $neve-676767;
+}
+
+.nv-meta-list li:not(:last-child):after {
+  color: $neve-676767;
+}
+
+.nv-meta-list a, .nv-meta-list a:hover {
+  color: $neve-676767;
+}
+
+.entry-title a {
+  color: $color-text;
+}
+
+.entry-title a:hover, .entry-title a:focus {
+  color: $color-text;
+}
+
+.article-content-col .content {
+  border-bottom: 1px solid $neve-f0f0f0;
+}
+
+.nv-loader {
+  border: 2px solid $neve-0366d6;
+}
+
+.nv-post-navigation .previous .nav-direction,
+.nv-post-navigation .next .nav-direction {
+  color: $neve-676767;
+}
+
+.nv-tags-list a {
+  border: 1px solid $neve-0366d6;
+  color: $neve-0366d6;
+}
+
+.nv-tags-list a:hover {
+  background: $neve-0366d6;
+  border-color: $neve-0366d6;
+  color: $neve-fff;
+}
+
+#comments {
+  border-top: 1px solid $neve-f0f0f0;
+}
+
+.nv-comment-article {
+  border-bottom: 1px solid $neve-f0f0f0;
+}
+
+.comment-author .author {
+  font-weight: $font-weight-bold;
+}
+
+.pingback {
+  border-bottom: 1px solid $neve-f0f0f0;
+}
+
+blockquote cite {
+  color: $neve-676767;
+}
+
+blockquote:after, blockquote:before {
+  background-color: $neve-c9c9c9;
+}
+
+table td, table th {
+  border-bottom: 1px solid $neve-f0f0f0;
+}
+
+p code {
+  background: $neve-d0effb;
+  border: 1px solid $neve-f0f0f0;
+}
+
+pre {
+  background: $neve-fbfbfb;
+  border: 1px solid $neve-f0f0f0;
+}
+
+.nv-content-wrap dt, .excerpt-wrap dt {
+  font-weight: $font-weight-semi-bold;
+}
+
+.wp-caption-text {
+  font-weight: $font-weight-medium;
+}
+
+hr {
+  border-top: 1px solid $neve-f0f0f0;
+}
+
+.widget p.widget-title {
+  font-weight: $font-weight-semi-bold;
+}
+
+.widget ul ul {
+  border-left: 1px solid $neve-f0f0f0;
+}
+
+.neve-breadcrumbs-wrapper a {
+  color: $neve-676767;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 769px) {
+}
+
+@media (min-width: 960px) {
+  .row .primary-menu-ul li:hover > a, .row .primary-menu-ul li:focus > a {
+    color: $neve-0366d6;
+  }
+  .row .primary-menu-ul li:hover > a .caret, .row .primary-menu-ul li:focus > a .caret {
+    color: $neve-0366d6;
+  }
+  .row .primary-menu-ul .sub-menu {
+    background: $neve-fff;
+    border-top: 1px solid $neve-f0f0f0;
+  }
+  .row .primary-menu-ul .sub-menu li {
+    background-color: $neve-fff;
+    border: 1px solid $neve-f0f0f0;
+  }
+  .row .caret-wrap.dropdown-open .caret {
+    color: $color-text;
+  }
+  .nv-sidebar-wrap.nv-right {
+    border-left: 1px solid $neve-f0f0f0;
+  }
+  .nv-sidebar-wrap.nv-left {
+    border-right: 1px solid $neve-f0f0f0;
+  }
+  .nv-nav-wrap .primary-menu-ul:not(#nv-primary-navigation-sidebar) .neve-mega-menu .neve-mm-col:not(:last-child) {
+    border-right: 1px solid $neve-f0f0f0;
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 960px) {
+}
+
+.header-top-inner.light-mode {
+  background-color: $neve-f0f0f0;
+}
+
+.light-mode {
+  background-color: $neve-fff;
+  color: $color-text;
+}
+
+.light-mode a:not(.button) {
+  color: $color-text;
+}
+
+.header--row-inner.dark-mode, .header--row-inner.dark-mode .sub-menu, .header--row-inner.dark-mode .sub-menu li {
+  border-color: $neve-333;
+  background-color: $neve-24292e;
+  color: $neve-fff;
+}
+
+.header--row-inner.dark-mode a:not(.button) {
+  color: $neve-fff;
+}
+
+.dark-mode .menu-item-nav-search, .dark-mode .menu-item-nav-cart > a {
+  color: $neve-fff;
+}
+
+.header-menu-sidebar .menu-item-nav-search.responsive-nav-search .nv-nav-search form input:not([type="submit"]) {
+  background-color: $neve-fff;
+}
+
+@media (max-width: 960px) {
+}
+
+.footer-top .light-mode {
+  background: $neve-fff;
+}
+
+.footer-top .dark-mode {
+  background: $neve-292929;
+}
+
+.footer-main .light-mode {
+  background: $neve-f9f9f9;
+}
+
+.footer-main .dark-mode {
+  background: $neve-24292e;
+}
+
+.footer-bottom .light-mode {
+  background: $neve-ededed;
+}
+
+.footer-bottom .dark-mode {
+  background: $neve-24292e;
+}
+
+.footer--row-inner.light-mode {
+  color: $color-text;
+}
+
+#secondary-menu li a {
+  font-weight: $font-weight-medium;
+}
+
+@media (min-width: 960px) {
+  .style-border-top ul > li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after, .style-border-bottom ul > li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after, .style-full-height ul > li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after {
+    background-color: $neve-0366d6;
+  }
+}
+
+.light-mode .icon-bar {
+  background: $neve-404248;
+}
+
+.dark-mode .icon-bar {
+  background: $neve-fff;
+}
+
+.light-mode .navbar-toggle {
+  color: $color-text;
+}
+
+.builder-item div[class*="builder-item--header_search"] input[type="search"] {
+  background-color: $neve-fff;
+}
+
+// Desktop
+@media (min-width: 960px) {
+}
+
+// Tablet
+@media (max-width: 959px) {
+}
+
+// Mobile
+@media (max-width: 576px) {
+  // GEST-Logo: Ausgeschriebenen Namen unterdrücken (Platz einsparen)
+  .site-logo small {
+    display: none;
+  }
+  
+  // GEST-Logo: Keine Mindestbreite mehr notwendig, da Text kürzer.
+  .site-logo .nv-title-tagline-wrap {
+    min-width: inherit;
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+// [/neve/style.css]
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+// [neve/inline css]
+//
+// Anpassungen der Inline CSS Regeln.
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+body, .site-title {
+  font-family: $font-text !important;
+}
+
+h1, .single h1.entry-title, h2, h3, h4, h5, h6 {
+  font-family: $font-heading !important;
+}
+
+.has-white-background-color {
+  background-color: $neve-ffffff !important;
+}
+
+.has-white-color {
+  color: $neve-ffffff !important;
+}
+
+.has-black-background-color {
+  background-color: $neve-000000 !important;
+}
+
+.has-black-color {
+  color: $neve-000000 !important;
+}
+
+.has-neve-button-color-background-color {
+  background-color: $neve-0366d6 !important;
+}
+
+.has-neve-button-color-color {
+  color: $neve-0366d6 !important;
+}
+
+.has-neve-link-color-background-color {
+  background-color: $neve-0366d6 !important;
+}
+
+.has-neve-link-color-color {
+  color: $neve-0366d6 !important;
+}
+
+.has-neve-link-hover-color-background-color {
+  background-color: $neve-0366d6 !important;
+}
+
+.has-neve-link-hover-color-color {
+  color: $neve-0366d6 !important;
+}
+
+.has-neve-text-color-background-color {
+  background-color: $neve-404248 !important;
+}
+
+.has-neve-text-color-color {
+  color: $neve-404248 !important;
+}
+
+.nv-tags-list a {
+  color: $neve-0366d6;
+}
+
+.nv-tags-list a {
+  border-color: $neve-0366d6;
+}
+
+.button.button-primary, button, input[type=button], .btn, input[type="submit"],
+ul[id^="nv-primary-navigation"] li.button.button-primary>a, .menu li.button.button-primary>a {
+  background-color: $neve-0366d6;
+}
+
+.button.button-primary, button, input[type=button], .btn, input[type="submit"],
+ul[id^="nv-primary-navigation"] li.button.button-primary>a, .menu li.button.button-primary>a {
+  color: $neve-ffffff;
+}
+
+.nv-tags-list a:hover {
+  border-color: $neve-0366d6;
+}
+
+.button.button-primary:hover, .nv-tags-list a:hover, ul[id^="nv-primary-navigation"] li.button.button-primary>a:hover, .menu li.button.button-primary>a:hover {
+  background-color: $neve-0366d6;
+}
+
+.button.button-primary:hover, .nv-tags-list a:hover, ul[id^="nv-primary-navigation"] li.button.button-primary>a:hover, .menu li.button.button-primary>a:hover {
+  color: $neve-ffffff;
+}
+
+.button.button-secondary, #comments input[type="submit"] {
+  color: $neve-676767;
+}
+
+.button.button-secondary, #comments input[type="submit"] {
+  border-color: $neve-676767;
+}
+
+.button.button-secondary:hover, #comments input[type="submit"]:hover {
+  color: $neve-676767;
+}
+
+.button.button-secondary:hover, #comments input[type="submit"]:hover {
+  border-color: $neve-676767;
+}
+
+.hfg_header .header-top-inner, .hfg_header .header-top-inner.dark-mode, .hfg_header .header-top-inner.light-mode {
+  background-color: $neve-ffffff;
+}
+
+.builder-item--primary-menu .nav-menu-primary>.primary-menu-ul li:not(.woocommerce-mini-cart-item)>a, .builder-item--primary-menu .nav-menu-primary>.primary-menu-ul li>a .caret-wrap .caret {
+  color: $neve-404248;
+}
+
+.builder-item--primary-menu .nav-menu-primary>.primary-menu-ul li:not(.woocommerce-mini-cart-item)>a:after {
+  background-color: $neve-0366d6;
+}
+
+.builder-item--primary-menu .nav-menu-primary>.primary-menu-ul li:not(.woocommerce-mini-cart-item):hover>a, .builder-item--primary-menu .nav-menu-primary>.primary-menu-ul li:hover>a>.caret-wrap .caret {
+  color: $neve-0366d6;
+}
+
+.builder-item--primary-menu .nav-menu-primary>.primary-menu-ul li.current-menu-item a, .builder-item--primary-menu .nav-menu-primary>.primary-menu-ul li.current-menu-item a .caret-wrap .caret {
+  color: $neve-0366d6;
+}
+
+.builder-item--primary-menu li>a {
+  font-weight: $font-weight-medium;
+}
+
+.builder-item--custom_html {
+  font-weight: $font-weight-medium;
+}
+
+.nav-menu-secondary:not(.style-full-height) #secondary-menu li:hover>a {
+  color: $neve-0366d6;
+}
+
+#secondary-menu a:after {
+  background-color: $neve-0366d6;
+}
+
+.builder-item--secondary-menu #secondary-menu li>a {
+  font-weight: $font-weight-semi-bold;
+}
+
+.nav-menu-footer #footer-menu>li>a {
+  color: $neve-ffffff;
+}
+
+.nav-menu-footer:not(.style-full-height) #footer-menu>li:hover>a {
+  color: $neve-d9dbdd;
+}
+
+#footer-menu>li>a:after {
+  background-color: $neve-d9dbdd;
+}
+
+.builder-item--footer-menu li>a {
+  font-weight: $font-weight-semi-bold;
+}
+
+.builder-item--footer_copyright {
+  font-weight: $font-weight-medium;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+// [/neve/inline css]
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+// Weitere Anpassungen.
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// GEST-Logo: Die Schriftfarbe muss hart überschrieben werden.
+a.brand {
+  color: $color-black !important;
+}
+
+// GEST-Logo: Umbrüche reduzieren, indem eine Mindestbreite zur Verfügung gestellt wird.
+.site-logo .nv-title-tagline-wrap {
+  min-width: 230px;
+}
+
+// Header-Menü: Workaround für abgeschnittene Unterstreichung auf der linken Seite (Hover-Effekt).
+#secondary-menu li:first-child {
+  padding-left:10px;
+}
+
+// Header-Menü: Workaround für abgeschnittene Unterstreichung auf der rechten Seite. (Hover-Effekt)
+#secondary-menu li:last-child {
+  padding-right:10px;
+}
+
+// Menü auf die Unterkante des Logos bringen.
+.site-header div.hfg-item-left {
+  margin-top: auto;
+}
+
+// Abkürzungen und Akronyme hervorheben, damit man weiß, dass man ggf. einen Tooltip beim Hover erhält.
+abbr, acronym {
+  background-color: tint($color-yellow, 80%);
+  display: inline-block;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+// -----------------------------------------------------------------------------
+//
+// [/Neve Overrides]
+//
+// -----------------------------------------------------------------------------
+
+/*
+ * ===========================
+ * [/Customizer/Additional CSS]
+ * ===========================
+ */
