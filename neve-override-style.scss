@@ -902,6 +902,45 @@ abbr, acronym {
 //
 // -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+//
+// [GTranslate Overrides]
+//
+// Plugin: https://de.wordpress.org/plugins/gtranslate/
+//
+// -----------------------------------------------------------------------------
+
+div.widget_gtranslate {
+  // Verhindert ein Umbrechen zwischen Flaggen und Dropdown-Box.
+  white-space: nowrap;
+  // Bei Verwendung im Footer (dunkelblauer Hintergrund), muss die Schriftfarbe
+  // einen ausreichenden Kontrast aufweisen.
+  color: $color-white;
+}
+
+div.widget_gtranslate select {
+  // Bei Verwendung im Footer (dunkelblauer Hintergrund), muss die Schriftfarbe
+  // einen ausreichenden Kontrast aufweisen.
+  color: $color-white;
+  // Aufhellen des Hintergrunds innerhalb des Dropdown-Feldes.
+  background: rgba(255, 255, 255, 0.2);
+  // Insbesondere auf Mobile darf die Select-Box nicht zu groß werden. Als
+  // erster Ansatz reicht fit-content aus.
+  max-width: fit-content;
+}
+
+// Innerhalb des Dropdowns selber (weißer Hintergrund) muss die Schriftfarbe
+// wieder Schwarz sein.
+div.widget_gtranslate select option {
+  color: $color-black;
+}
+
+// -----------------------------------------------------------------------------
+//
+// [/GTranslate Overrides]
+//
+// -----------------------------------------------------------------------------
+
 /*
  * ===========================
  * [/Customizer/Additional CSS]
