@@ -1030,6 +1030,59 @@ body.pojo-a11y-focusable a:focus {
 //
 // -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+//
+// [GDPR Cookie Consent Overrides]
+//
+// Plugin: https://de.wordpress.org/plugins/cookie-law-info/
+//
+// -----------------------------------------------------------------------------
+
+#cookie-law-info-bar {
+  // Lasse den Hintergrund durchscheinen, da die Leiste ggf. die untere
+  // Navigationsleiste (und Sprachauswahl) verdeckt. Somit haben Nutzer
+  // einen Hinweis darauf, dass sie den Dialog wegklicken sollten.
+  background-color: rgba(255, 255, 255, 0.8) !important;
+	font-weight:$font-weight-normal;
+}
+
+#cookie-law-info-again {
+  // Hinter das Footer-Menü legen, damit dies stets sichtbar ist.
+  z-index: 9;
+  // Schatten ähnlich zu anderen bereits vorhandenen Schatten.
+  -webkit-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.8);
+}
+
+//
+// Weitere Anpassungen
+//
+
+.cli_settings_button {
+  color: shade($color-green, 10%) !important;
+  text-decoration-color: shade($color-green, 20%) !important;
+}
+
+.cli-plugin-main-button {
+  color: $color-white !important;
+  background-color: shade($color-green, 40%) !important;
+}
+
+.cli-plugin-main-button:active, .cli-plugin-main-button:hover {
+  background-color: shade($color-green, 20%) !important;
+}
+
+.cli-tab-header {
+  background-color:tint($color-green, 91%) !important;
+}
+
+// -----------------------------------------------------------------------------
+//
+// [/GDPR Cookie Consent Overrides]
+//
+// -----------------------------------------------------------------------------
+
 /*
  * ===========================
  * [/Customizer/Additional CSS]
