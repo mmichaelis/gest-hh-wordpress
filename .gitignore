@@ -1,0 +1,6 @@
+.wordpress/
+tmp/
+
+*.bak
+*~
+desktop.ini
