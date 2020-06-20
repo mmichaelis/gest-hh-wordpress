@@ -1,0 +1,56 @@
+@charset 'UTF-8';
+
+// =============================================================================
+//
+// Sassy CSS (SCSS) für die Website der GEST: Neve Colors
+//
+// Hinweis: Zeilenkommentare (//) werden bei der CSS Erzeugung entfernt,
+//          Blockkommentare (/* ... */) hingegen werden beibehalten.
+//
+// Links:
+//   - https://www.htmlcsscolor.com/
+//   - https://www.rgbtohex.net/
+//   - https://www.sassmeister.com/
+//   - https://sass-guidelin.es/de/
+//
+// =============================================================================
+
+@import './gest-colors.scss';
+
+@use "sass:map";
+
+$neve-color-map: (
+  #000000: $color-black,
+  #0366d6: tint($color-blue, 9%), // #284cb3
+  #24292e: shade($color-blue, 57%), // #08194a
+  #292929: shade($color-blue, 56%), // #081a4c
+  #333: shade($color-blue, 46%), // #0a1f5d
+  #404248: shade($color-blue, 28%), // #0e2a7c
+  #676767: tint($color-blue, 5%), // #1f44b0
+  #8f98a1: tint($color-blue, 36%), // #6881ca
+  #c9c9c9: tint($color-blue, 66%), // #afbce3
+  #d0effb: tint($color-blue, 85%), // #dce1f3
+  #d9dbdd: tint($color-blue, 77%), // #c9d2ec
+  #dddddd: tint($color-blue, 79%), // #cdd6ee
+  #ededed: tint($color-blue, 89%), // #e5e9f6
+  #eee: tint($color-blue, 90%), // #e7ebf7
+  #f0f0f0: tint($color-blue, 91%), // #eaedf8
+  #f9f9f9: tint($color-blue, 97%), // #f8f9fd
+  #fbfbfb: tint($color-blue, 98%), // #fafbfd
+  #fff: $color-white // #fff
+);
+
+/// Wandelt Neve-Standard-Farben in GEST-Farben um.
+/// Verwendung: color: map-neve-color(#0366d6);
+/// @access public
+/// @param {Color} $color - Auf GEST-Farben abzubildende Neve-Farbe.
+/// @return {Color}
+
+@function map-neve-color($color) {
+  $mapped: get($neve-color-map, $color);
+  @if $mapped {
+    @return $mapped;
+  }
+  @warn "Unable to map Neve color #{$color}.";
+  @return $color;
+}

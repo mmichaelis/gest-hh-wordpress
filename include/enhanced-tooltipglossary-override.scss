@@ -1,0 +1,7 @@
+@charset 'UTF-8';
+
+@media print {
+  span.glossaryLink, a.glossaryLink {
+    border-bottom: none;
+  }
+}

@@ -1,0 +1,75 @@
+@charset 'UTF-8';
+// =============================================================================
+//
+// Sassy CSS (SCSS) für die Website der GEST: Fonts
+//
+// Hinweis: Zeilenkommentare (//) werden bei der CSS Erzeugung entfernt,
+//          Blockkommentare (/* ... */) hingegen werden beibehalten.
+//
+// Links:
+//   - https://www.htmlcsscolor.com/
+//   - https://www.rgbtohex.net/
+//   - https://www.sassmeister.com/
+//   - https://sass-guidelin.es/de/
+//
+// =============================================================================
+
+@import './import-once.scss';
+
+// Import der Schriftarten für font-weight 400 und 600.
+// Überschriften/Text: https://fonts.google.com/specimen/Open+Sans
+// GEST CI Schriftzug: https://fonts.google.com/specimen/Mitr
+@if not-imported('gest-fonts') {
+  @import url('https://fonts.googleapis.com/css?family=Mitr:400,600|Open+Sans:400,400i,600,600i&display=swap');
+}
+
+@use "sass:list";
+@use "sass:map";
+
+// Neve Standard Fonts als Fallback erhalten.
+$font-stack-neve: ('Graphik', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', sans-serif);
+$font-stack-gest: (
+  'text': join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
+  'heading': join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
+  'logo': join(('Mitr Regular', 'Mitr'), $font-stack-neve)
+);
+
+/// Stellt sicher, dass der Font-Weight in den bereitgestellten Font-Varianten
+/// verfügbar ist.
+/// Verwendung: font-weight: map-font-weight(500);
+/// @access public
+/// @param {Number} $original-weight - Der ursprüngliche font-weight, der abgebildet werden soll.
+/// @return {Color}
+
+@function map-font-weight($original-weight) {
+  @if $original-weight <= 400 {
+    @return 400;
+  }
+  @if $original-weight >= 600 {
+    @return 600;
+  }
+  @if $original-weight >= 500 {
+    @return 600;
+  }
+  @return 400;
+}
+
+@mixin font-text {
+  font-family: get($font-stack-gest, 'text');
+  font-weight: 400;
+}
+
+@mixin font-heading {
+  font-family: get($font-stack-gest, 'heading');
+  font-weight: 600;
+}
+
+@mixin font-logo-text {
+  font-family: get($font-stack-gest, 'logo');
+  font-weight: 400;
+}
+
+@mixin font-logo-heading {
+  font-family: get($font-stack-gest, 'logo');
+  font-weight: 600;
+}

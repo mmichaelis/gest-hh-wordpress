@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+@import './neve-override.scss';
+@import './gtranslate-override.scss';
+@import './wpadminbar-override.scss';
+@import './uag-override.scss';
+@import './cookie-notice-override.scss';
+@import './wordpress-override.scss';
+@import './wpforms-override.scss';
+@import './wp-accessibility-override.scss';
+@import './enhanced-tooltipglossary-override.scss';
+
+@media print {
+  // https://www.lockedownseo.com/chrome-print-preview-differs-from-dev-tools/
+  * {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+  
+  body, a {
+    color: #000 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  // Zusatztext für den Ausdruck am Ende der Seite.
+  // https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
+  #site-footer::after {
+    content: "Aktuelle Informationen erhalten Sie auf www.gest-hamburg.de.";
+  }
+
+  // Link-Ziele im Ausdruck mit angeben.
+  // https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
+  a[href^="http"]:not([href*="gest-hamburg"]):after {
+    content: " (" attr(href) ")";
+  }
+}

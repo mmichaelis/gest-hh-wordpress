@@ -1,0 +1,23 @@
+@charset 'UTF-8';
+
+@import './gest-mixins.scss';
+
+#cookie-notice {
+  z-index: 999950 !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+
+  .cn-button {
+    @include button(20px);
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: none;
+    text-transform: initial;
+    box-shadow: none;
+  }
+}
+
+@media print {
+  #cookie-notice {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+
+#gtranslate_wrapper {
+  left: 10px !important;
+  z-index: 999800 !important;
+}
+
+.widget_gtranslate {
+  // Verhindert ein Umbrechen zwischen Flaggen und Dropdown-Box.
+  white-space: nowrap;
+}
+
+.menu-item-gtranslate {
+  text-align: left;
+}
+
+#gtranslate_selector {
+  // Bei Verwendung im Footer (dunkelblauer Hintergrund), muss die Schriftfarbe
+  // einen ausreichenden Kontrast aufweisen.
+  color: #000;
+  // Aufhellen des Hintergrunds innerhalb des Dropdown-Feldes.
+  background: rgba(255, 255, 255, 0.5);
+  // Insbesondere auf Mobile darf die Select-Box nicht zu groß werden. Als
+  // erster Ansatz reicht fit-content aus.
+  max-width: fit-content;
+
+  // Innerhalb des Dropdowns selber (weißer Hintergrund) muss die Schriftfarbe
+  // wieder Schwarz sein.
+  option {
+    color: #000;
+  }
+}
+
+footer {
+  z-index: 999850 !important;
+}
+
+@media print {
+  #gtranslate_wrapper {
+    display: none;
+  }
+}

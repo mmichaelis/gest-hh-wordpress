@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+
+@import './gest-mixins.scss';
+
+div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form .wpforms-page-button {
+  @include button(28px);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+@media print {
+  .wpforms-form {
+    .wpforms-recaptcha-container, button[type=submit] {
+      display: none !important;
+    }
+  }
+}

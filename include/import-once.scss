@@ -1,0 +1,23 @@
+@charset 'UTF-8';
+
+// ======================================================================
+//
+// Stellt sicher, dass SCSS-Dateien nur einmal importiert werden.
+// Verwendung:
+//   @if not-imported("your-file") { @import "your-file"; }
+//
+// Siehe: https://paul.wellnerbou.de/2015/05/18/avoid-multiple-imports-of-the-same-scss-file-with-sass/
+//
+// ======================================================================
+
+$imported-once-files: () !default;
+
+@function not-imported($name) {
+  $imported-once-files: $imported-once-files !global;
+  $module_index: index($imported-once-files, $name);
+  @if (($module_index == null) or ($module_index == false)) {
+    $imported-once-files: append($imported-once-files, $name) !global;
+    @return true;
+  }
+  @return false;
+}

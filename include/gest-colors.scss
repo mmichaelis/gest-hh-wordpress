@@ -1,0 +1,68 @@
+@charset 'UTF-8';
+// =============================================================================
+//
+// Sassy CSS (SCSS) für die Website der GEST: Farben
+//
+// Hinweis: Zeilenkommentare (//) werden bei der CSS Erzeugung entfernt,
+//          Blockkommentare (/* ... */) hingegen werden beibehalten.
+//
+// Links:
+//   - https://www.htmlcsscolor.com/
+//   - https://www.rgbtohex.net/
+//   - https://www.sassmeister.com/
+//   - https://sass-guidelin.es/de/
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+//
+// GEST CI Farben
+//
+// Palette erstellt: https://paletton.com/#uid=75B110kw0w0jyC+oRxVy4oIDfjr
+// Sonderfarbe: rgb(55, 86, 177); #3756b1 (für das Dach im Logo)
+//
+// -----------------------------------------------------------------------------
+
+$color-red: rgb(251, 0, 13); // Name: Torch Red, Hex: #FB000D, https://www.htmlcsscolor.com/hex/FB000D
+$color-yellow: rgb(255, 174, 0); // Name: Orange, Hex: #FFAE00, https://www.htmlcsscolor.com/hex/FFAE00
+$color-blue: rgb(19, 58, 172); // Name: Egyptian Blue, Hex: #133AAC, https://www.htmlcsscolor.com/hex/133AAC
+$color-green: rgb(20, 209, 0); // Name: Free Speech Green, Hex: #14D100, https://www.htmlcsscolor.com/hex/14D100
+$color-roof: rgb(55, 86, 177); // Name: Cerulean Blue, Hex: #3756B1, https://www.htmlcsscolor.com/hex/3756B1
+
+// -----------------------------------------------------------------------------
+//
+// Weitere Farben
+//
+// -----------------------------------------------------------------------------
+
+$color-white: rgb(255, 255, 255); // Name: White, Hex: #ffffff oder #fff, https://www.htmlcsscolor.com/hex/FFFFFF
+$color-black: rgb(0, 0, 0); // Name: Black, Hex: #000000 oder #000, https://www.htmlcsscolor.com/hex/000000
+$color-gray: rgb(128, 128, 128); // Name: Gray, Hex: #808080, https://www.htmlcsscolor.com/hex/808080
+
+// -----------------------------------------------------------------------------
+//
+// Farbfunktionen
+//
+// -----------------------------------------------------------------------------
+
+/// Hellt eine Farbe leicht auf.
+/// Verwendung: color: tint(pink, 30%);
+/// @access public
+/// @param {Color} $color - zu färbende Farbe
+/// @param {Number} $percentage - Prozent von `$color` welcher die Farbe wiedergegeben werden soll
+/// @return {Color}
+
+@function tint($color, $percentage) {
+  @return mix($color-white, $color, $percentage);
+}
+
+/// Verdunkelt eine Farbe leicht.
+/// Verwendung: color: shade(pink, 30%);
+/// @access public
+/// @param {Color} $color - zu verdunkelnde Farbe
+/// @param {Number} $percentage - Prozent von `$color` welcher die Farbe wiedergegeben werden soll
+/// @return {Color}
+
+@function shade($color, $percentage) {
+  @return mix($color-black, $color, $percentage);
+}

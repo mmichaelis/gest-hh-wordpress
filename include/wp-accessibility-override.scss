@@ -1,0 +1,53 @@
+@charset 'UTF-8';
+
+.a11y-toolbar {
+  -webkit-box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+
+  .offscreen {
+    text-overflow: ellipsis;
+  }
+
+  button:hover .offscreen, button:focus .offscreen {
+    width: 16em !important;
+  }
+
+  // Tooltip soll nur bei Hover angezeigt werden, da er sonst
+  // den Inhalt stört.
+  button:focus .offscreen {
+    display: none;
+  }
+}
+
+@media print {
+  .a11y-toolbar {
+    display: none !important;
+  }
+}
+
+@media screen, projection, tv {
+  .contrast {
+    // Background Images werden versteckt. Kein Grund, Platz für sie zu reservieren.
+    .wp-block-cover {
+      min-height: unset;
+      height: unset;
+    }
+
+    // Entferne unschönen schwarzen Hintergrund hinter "GEST".
+    .site-title {
+      color: #00FFFF !important;
+      background-color: transparent !important;
+    }
+
+    // Mache Hamburger-Menü besser sichtbar im High-Contrast-Modus.
+    .icon-bar {
+      background-color: #fff !important;
+    }
+
+    article .article-content-col .content {
+      background: unset !important;
+    }
+  
+  }
+}

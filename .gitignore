@@ -1,5 +1,7 @@
 .wordpress/
 tmp/
+css/
+node_modules/
 
 *.bak
 *~

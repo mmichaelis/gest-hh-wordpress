@@ -1,0 +1,564 @@
+@charset 'UTF-8';
+// =============================================================================
+//
+// Sassy CSS (SCSS) für die Website der GEST: Overrides für Neve Theme
+//
+// Hinweis: Zeilenkommentare (//) werden bei der CSS Erzeugung entfernt,
+//          Blockkommentare (/* ... */) hingegen werden beibehalten.
+//
+// Links:
+//   - https://www.htmlcsscolor.com/
+//   - https://www.rgbtohex.net/
+//   - https://www.sassmeister.com/
+//   - https://sass-guidelin.es/de/
+//
+// =============================================================================
+
+@import './gest-fonts.scss';
+@import './gest-mixins.scss';
+@import './neve-colors.scss';
+
+.wp-block-button a, a.button.close-responsive-search, .button, button, input[type=button], .btn, input[type="submit"] {
+  font-weight: map-font-weight(600) !important;
+}
+
+.wp-block-button.is-style-outline a.wp-block-button__link, a.button.close-responsive-search, .button.button-secondary, #comments input[type=submit] {
+  font-weight: map-font-weight(600) !important;
+  color: map-neve-color(#676767) !important;
+}
+
+.button.button-primary, button, input[type=button], .btn, input[type="submit"] {
+  background-color: map-neve-color(#0366d6);
+  color: map-neve-color(#fff);
+}
+
+.button.button-primary:hover, button:hover, input:hover[type=button], .btn:hover, input:hover[type="submit"] {
+  background-color: map-neve-color(#0366d6);
+  color: map-neve-color(#fff);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: map-font-weight(600);
+}
+
+body {
+  @include font-text;
+  color: map-neve-color(#404248);
+  background-color: map-neve-color(#fff);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-heading;
+  font-weight: map-font-weight(600);
+}
+
+a {
+  color: map-neve-color(#0366d6);
+}
+
+a:hover, a:focus {
+  color: map-neve-color(#0366d6);
+}
+
+a.neve-skip-link {
+  background-color: map-neve-color(#24292e);
+  color: map-neve-color(#fff);
+}
+
+a.neve-skip-link:focus {
+  color: map-neve-color(#fff);
+}
+
+.wp-block-separator {
+  background-color: map-neve-color(#8f98a1);
+}
+
+.nv-top-bar a {
+  font-weight: map-font-weight(500);
+}
+
+.site-logo h1, .site-logo p {
+  font-weight: map-font-weight(600);
+}
+
+.site-logo a {
+  color: map-neve-color(#404248);
+}
+
+.site-logo a:hover {
+  color: map-neve-color(#404248);
+}
+
+.nv-navbar {
+  background-color: map-neve-color(#fff);
+}
+
+.primary-menu-ul a {
+  color: map-neve-color(#404248);
+}
+
+.primary-menu-ul .sub-menu {
+  border-left: 1px solid map-neve-color(#f0f0f0);
+}
+
+ul[id^="nv-primary-navigation"] .current-menu-item > a {
+  color: map-neve-color(#0366d6);
+}
+
+.menu-item-nav-search.responsive-nav-search .nv-nav-search {
+  background-color: map-neve-color(#fff);
+}
+
+.menu-item-nav-search.responsive-nav-search .nv-nav-search form .nv-search-icon-wrap {
+  color: map-neve-color(#c9c9c9);
+}
+
+.menu-item-nav-search.responsive-nav-search .nv-nav-search form input[type="submit"]:hover {
+  background-color: map-neve-color(#eee);
+}
+
+.nv-nav-search {
+  background: map-neve-color(#fff);
+  border-top: 1px solid map-neve-color(#f0f0f0);
+}
+
+.nv-nav-wrap .neve-mega-menu .neve-mm-col .sub-menu .sub-menu li {
+  border-bottom: 1px solid map-neve-color(#f0f0f0) !important;
+}
+
+.nv-nav-wrap .neve-mega-menu .neve-mm-heading a, .nv-nav-wrap .neve-mega-menu .neve-mm-heading span {
+  font-weight: map-font-weight(700);
+}
+
+.nv-nav-wrap .neve-mega-menu .neve-mm-divider {
+  background-color: map-neve-color(#c9c9c9);
+}
+
+footer {
+  background-color: map-font-color(#fff);
+}
+
+.nv-page-title-wrap.nv-big-title .nv-page-title {
+  border-bottom: 1px solid map-neve-color(#f0f0f0);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea {
+  color: map-neve-color(#333);
+  border: 1px solid map-neve-color(#dddddd);
+}
+
+input[type="color"],
+select {
+  color: map-neve-color(#333);
+  border: 1px solid map-neve-color(#dddddd);
+}
+
+.nv-seach-form-wrap {
+  border-top: 1px solid map-neve-color(#f0f0f0);
+}
+
+.search-form .nv-search-icon-wrap, .woocommerce-product-search .nv-search-icon-wrap {
+  color: map-neve-color(#c9c9c9);
+}
+
+.search-form button[type="submit"]:hover, .search-form input[type="submit"]:hover, .woocommerce-product-search button[type="submit"]:hover, .woocommerce-product-search input[type="submit"]:hover {
+  background-color: map-neve-color(#eee);
+}
+
+.nv-meta-list li {
+  color: map-neve-color(#676767);
+}
+
+.nv-meta-list li:not(:last-child):after {
+  color: map-neve-color(#676767);
+}
+
+.nv-meta-list a, .nv-meta-list a:hover {
+  color: map-neve-color(#676767);
+}
+
+.entry-title a {
+  color: map-neve-color(#404248);
+}
+
+.entry-title a:hover, .entry-title a:focus {
+  color: map-neve-color(#404248);
+}
+
+.article-content-col .content {
+  border-bottom: 1px solid map-neve-color(#f0f0f0);
+}
+
+.nv-loader {
+  border: 2px solid map-neve-color(#0366d6);
+  border-left: 1px solid transparent !important;
+}
+
+.nv-post-navigation .previous .nav-direction,
+.nv-post-navigation .next .nav-direction {
+  color: map-neve-color(#676767);
+}
+
+.nv-tags-list a {
+  border: 1px solid map-neve-color(#0366d6);
+  color: map-neve-color(#0366d6);
+}
+
+.nv-tags-list a:hover {
+  background: map-neve-color(#0366d6);
+  border-color: map-neve-color(#0366d6);
+  color: map-neve-color(#fff);
+}
+
+#comments {
+  border-top: 1px solid map-neve-color(#f0f0f0);
+}
+
+.nv-comment-article {
+  border-bottom: 1px solid map-neve-color(#f0f0f0);
+}
+
+.pingback {
+  border-bottom: 1px solid map-neve-color(#f0f0f0);
+}
+
+blockquote cite {
+  color: map-neve-color(#676767);
+}
+
+blockquote:after, blockquote:before {
+  background-color: map-neve-color(#c9c9c9);
+}
+
+table td, table th {
+  border-bottom: 1px solid map-neve-color(#f0f0f0);
+}
+
+p code {
+  background: map-neve-color(#d0effb);
+  border: 1px solid map-neve-color(#f0f0f0);
+}
+
+pre {
+  background: map-neve-color(#fbfbfb);
+  border: 1px solid map-neve-color(#f0f0f0);
+}
+
+.nv-content-wrap dt, .excerpt-wrap dt {
+  font-weight: map-font-weight(600);
+}
+
+hr {
+  border-top: 1px solid map-neve-color(#f0f0f0);
+}
+
+.widget ul ul {
+  border-left: 1px solid map-neve-color(#f0f0f0);
+}
+
+.neve-breadcrumbs-wrapper a {
+  color: map-neve-color(#676767);
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 769px) {
+}
+
+@media (max-width: 960px) {
+}
+
+@media (min-width: 960px) {
+  .row .primary-menu-ul li:hover > a, .row .primary-menu-ul li:focus > a {
+    color: map-neve-color(#0366d6);
+  }
+
+  .row .primary-menu-ul .sub-menu {
+    background: map-neve-color(#fff);
+    border-top: 1px solid map-neve-color(#f0f0f0);
+  }
+
+  .row .primary-menu-ul .sub-menu li {
+    background-color: map-neve-color(#fff);
+    border: 1px solid map-neve-color(#f0f0f0);
+    border-top: none;
+  }
+
+  .nv-sidebar-wrap.nv-right {
+    border-left: 1px solid map-neve-color(#f0f0f0);
+  }
+
+  .nv-sidebar-wrap.nv-left {
+    border-right: 1px solid map-neve-color(#f0f0f0);
+  }
+
+  .nv-nav-wrap .primary-menu-ul:not(#nv-primary-navigation-sidebar) .neve-mega-menu .neve-mm-col:not(:last-child) {
+    border-right: 1px solid map-neve-color(#f0f0f0);
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
+.header-top-inner.light-mode {
+  background-color: map-neve-color(#f0f0f0);
+}
+
+.header-top-inner.light-mode {
+  background-color: map-neve-color(#f0f0f0);
+}
+
+.light-mode {
+  background-color: map-neve-color(#fff);
+  color: map-neve-color(#404248);
+}
+
+.light-mode a:not(.button) {
+  color: map-neve-color(#404248);
+}
+
+.header--row-inner.dark-mode, .header--row-inner.dark-mode .sub-menu, .header--row-inner.dark-mode .sub-menu li {
+  border-color: map-neve-color(#333);
+  background-color: map-neve-color(#24292e);
+  color: map-neve-color(#fff);
+}
+
+.header--row-inner.dark-mode a:not(.button) {
+  color: map-neve-color(#fff);
+}
+
+.dark-mode .menu-item-nav-search, .dark-mode .menu-item-nav-cart > a {
+  color: map-neve-color(#fff);
+}
+
+.footer-top .light-mode {
+  background: map-neve-color(#fff);
+}
+
+.footer-top .dark-mode {
+  background: map-neve-color(#292929);
+}
+
+.footer-main .light-mode {
+  background: map-neve-color(#f9f9f9);
+}
+
+.footer-main .dark-mode {
+  background: map-neve-color(#24292e);
+}
+
+.footer-bottom .light-mode {
+  background: map-neve-color(#ededed);
+}
+
+.footer-bottom .dark-mode {
+  background: map-neve-color(#24292e);
+}
+
+.footer--row-inner.light-mode {
+  color: map-neve-color(#404248);
+}
+
+.style-full-height .primary-menu-ul li:hover > a, .style-full-height .row .primary-menu-ul li:focus > a {
+  color: map-neve-color(#404248);
+}
+
+@media (min-width: 960px) {
+  .style-border-top ul > li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after, .style-border-bottom ul > li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after, .style-full-height ul > li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after {
+    background-color: map-neve-color(#0366d6);
+  }
+}
+
+.light-mode .icon-bar {
+  background: map-neve-color(#404248);
+}
+
+.dark-mode .icon-bar {
+  background: map-neve-color(#fff);
+}
+
+.light-mode .navbar-toggle {
+  color: map-neve-color(#404248);
+}
+
+.builder-item div[class*="builder-item--header_search"]:not(.builder-item--header_search_responsive) input[type="search"] {
+  background-color: map-neve-color(#fff);
+}
+
+// ======================================================================
+//
+// Individuelle Anpassungen
+// ------------------------
+//
+// Während die oberen Anpassungen sich streng an das style.css vom
+// Theme Neve halten, folgen jetzt ein paar Anpassungen, die zur
+// Anpassung einzelner Elemente über die Neve-Standardkonfiguration
+// hinaus dienen.
+//
+// ======================================================================
+
+// Forciert, dass für den Text neben dem Logo, die Logo-spezifisiche
+// Schriftart (Mitr) verwendet wird.
+.site-logo {
+  @include font-logo-text;
+  color: #000;
+}
+
+// Forciert, dass für den Text neben dem Logo, die Logo-spezifisiche
+// Schriftart (Mitr) verwendet wird.
+.site-title {
+  @include font-logo-heading;
+  color: #000;
+}
+
+.site-logo small {
+  color: #000;
+}
+
+// Die obigen Einstellungen führen zu einer blauen Schrift. Um die Lesbarkeit
+// zu erhöhen, aber auch um später beim Ausdruck unnötigerweise blaue Schrift
+// zu erhalten, wird sie hier auf Schwarz gesetzt. !important wird nicht
+// verwendet, damit die Farbe für einzelne Elemente leichter überschrieben
+// werden kann.
+body {
+  color: #000;
+}
+
+// Gleicht das Layout der Beitragsübersicht so an, dass sie ähnlich
+// zu der Darstellung auf der Hauptseite ist (gerendert vom UAG
+// Plugin).
+article .article-content-col {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  .content {
+    @include post_preview;
+
+    .blog-entry-title, .nv-meta-list, .excerpt-wrap {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+// Mobile: Spare Platz, indem ausgeschriebene Variante für die
+// Abkürzung GEST vermieden wird.
+@media (max-width: 768px) {
+  // GEST-Logo: Ausgeschriebenen Namen unterdrücken (Platz einsparen)
+  .site-logo small {
+    display: none;
+  }
+  
+  // GEST-Logo: Keine Mindestbreite mehr notwendig, da Text kürzer.
+  .site-logo .nv-title-tagline-wrap {
+    min-width: inherit;
+  }
+}
+
+// GEST-Logo: Nicht zu breit, um mindestens einen Umbruch zu erzeugen.
+.site-logo .nv-title-tagline-wrap {
+  max-width: 230px;
+}
+
+// Menü auf die Unterkante des Logos bringen.
+.site-header div.hfg-item-left {
+  margin-top: auto;
+}
+
+// Kleine Bilder in Beiträgen zentrieren.
+.nv-thumb-wrap img {
+  $border-radius: 12px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+  
+  overflow: hidden;
+}
+
+// Kleine Bilder in Beitragsübersicht zentrieren.
+.nv-post-thumbnail-wrap img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media print {
+  article .article-content-col .content {
+    background: unset !important;
+  }
+
+  .site-header div.hfg-item-first {
+    display: none;
+  }
+
+  .blog-sidebar {
+    display: none;
+  }
+
+  .footer-bottom .dark-mode {
+    background: $color-white !important;
+  }
+
+  #cb-row--footer-top {
+    display: none;
+  }
+
+  .nv-post-navigation {
+    display: none;
+  }
+
+  .site-logo {
+    // GEST-Logo im Print wieder mit vollständigem Text darstellen.
+    small, img {
+      display: unset !important;
+    }
+    // GEST-Logo im Print wieder Umbrüche forcieren.
+    .nv-title-tagline-wrap {
+      min-width: 230px !important;
+    }
+  }
+
+  // GEST-Logo als alleiniges Element rechtsbündig darstellen.
+  .header--row .header--row-inner .container .row {
+    justify-content: flex-end;
+  }
+
+  // Behebt Probleme bei Post-Masonry Display (überlappende Inhalte).
+  .nv-index-posts .posts-wrapper {
+    article {
+      max-width: 33.33% !important;
+      padding-left: 5px !important;
+      padding-right: 5px !important;
+      margin-bottom: 4em !important;
+      font-size: 10pt !important;
+    }
+  }
+}
