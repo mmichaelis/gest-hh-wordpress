@@ -14,9 +14,9 @@
 //
 // =============================================================================
 
-@import './gest-fonts.scss';
-@import './gest-mixins.scss';
-@import './neve-colors.scss';
+@import '../base/fonts';
+@import '../mixins/post_preview';
+@import '../base/colors_neve';
 
 .wp-block-button a, a.button.close-responsive-search, .button, button, input[type=button], .btn, input[type="submit"] {
   font-weight: map-font-weight(600) !important;
@@ -37,15 +37,6 @@
   color: map-neve-color(#fff);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: map-font-weight(600);
-}
-
 body {
   @include font-text;
   color: map-neve-color(#404248);
@@ -59,7 +50,6 @@ h4,
 h5,
 h6 {
   @include font-heading;
-  font-weight: map-font-weight(600);
 }
 
 a {

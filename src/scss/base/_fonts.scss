@@ -1,4 +1,6 @@
 @charset 'UTF-8';
+@import 'import-once';
+
 // =============================================================================
 //
 // Sassy CSS (SCSS) für die Website der GEST: Fonts
@@ -14,7 +16,6 @@
 //
 // =============================================================================
 
-@import './import-once.scss';
 
 // Import der Schriftarten für font-weight 400 und 600.
 // Überschriften/Text: https://fonts.google.com/specimen/Open+Sans
@@ -23,15 +24,12 @@
   @import url('https://fonts.googleapis.com/css?family=Mitr:400,600|Open+Sans:400,400i,600,600i&display=swap');
 }
 
-@use "sass:list";
-@use "sass:map";
-
 // Neve Standard Fonts als Fallback erhalten.
 $font-stack-neve: ('Graphik', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', sans-serif);
 $font-stack-gest: (
-  'text': join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
-  'heading': join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
-  'logo': join(('Mitr Regular', 'Mitr'), $font-stack-neve)
+  'text': list-join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
+  'heading': list-join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
+  'logo': list-join(('Mitr Regular', 'Mitr'), $font-stack-neve)
 );
 
 /// Stellt sicher, dass der Font-Weight in den bereitgestellten Font-Varianten
@@ -55,21 +53,21 @@ $font-stack-gest: (
 }
 
 @mixin font-text {
-  font-family: get($font-stack-gest, 'text');
+  font-family: map-get($font-stack-gest, 'text');
   font-weight: 400;
 }
 
 @mixin font-heading {
-  font-family: get($font-stack-gest, 'heading');
+  font-family: map-get($font-stack-gest, 'heading');
   font-weight: 600;
 }
 
 @mixin font-logo-text {
-  font-family: get($font-stack-gest, 'logo');
+  font-family: map-get($font-stack-gest, 'logo');
   font-weight: 400;
 }
 
 @mixin font-logo-heading {
-  font-family: get($font-stack-gest, 'logo');
+  font-family: map-get($font-stack-gest, 'logo');
   font-weight: 600;
 }

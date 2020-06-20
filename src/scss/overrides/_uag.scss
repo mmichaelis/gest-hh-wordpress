@@ -1,7 +1,8 @@
 @charset 'UTF-8';
 
-@import "./gest-colors.scss";
-@import './gest-mixins.scss';
+@import '../base/colors_gest';
+@import '../mixins/button';
+@import '../mixins/post_preview';
 
 .uagb-post__cta {
   background: transparent !important;

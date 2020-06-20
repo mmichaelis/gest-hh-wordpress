@@ -7,17 +7,19 @@
     "type": "git",
     "url": "https://github.com/mmichaelis/gest-hh-wordpress.git"
   },
-  "license" : "Unlicense",
+  "license": "Unlicense",
   "private": "true",
   "author": {
     "name": "Mark Michaelis",
     "url": "https://about.me/michaelismark"
   },
-  "dependencies": {
-    "node-sass": "^4.14.1"
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-migrator": "^1.2.3"
   },
   "scripts": {
-    "watch-css": "node-sass --indent-type space --indent-width 2 --linefeed lf --include-path include --embed-source-map --output css/watch --watch scss",
-    "build-css": "node-sass --indent-type space --indent-width 2 --linefeed lf --include-path include --embed-source-map --output css/build scss"
+    "watch": "node-sass --indent-type space --indent-width 2 --output-style expanded --linefeed lf --include-path include --embed-source-map --output target/watch/css --watch src/scss",
+    "build": "node-sass --indent-type space --indent-width 2 --output-style expanded --linefeed lf --include-path include --embed-source-map --output target/dist/css src/scss",
+    "clean" : "rimraf target"
   }
 }

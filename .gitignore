@@ -1,8 +1,9 @@
-.wordpress/
 tmp/
-css/
+target/
 node_modules/
 
 *.bak
+*.log
+*.out
 *~
 desktop.ini

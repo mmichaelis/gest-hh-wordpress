@@ -1,15 +1,5 @@
 @charset 'UTF-8';
 
-@import './neve-override.scss';
-@import './gtranslate-override.scss';
-@import './wpadminbar-override.scss';
-@import './uag-override.scss';
-@import './cookie-notice-override.scss';
-@import './wordpress-override.scss';
-@import './wpforms-override.scss';
-@import './wp-accessibility-override.scss';
-@import './enhanced-tooltipglossary-override.scss';
-
 @media print {
   // https://www.lockedownseo.com/chrome-print-preview-differs-from-dev-tools/
   * {

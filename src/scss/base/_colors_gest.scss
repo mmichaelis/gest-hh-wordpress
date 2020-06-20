@@ -38,31 +38,3 @@ $color-roof: rgb(55, 86, 177); // Name: Cerulean Blue, Hex: #3756B1, https://www
 $color-white: rgb(255, 255, 255); // Name: White, Hex: #ffffff oder #fff, https://www.htmlcsscolor.com/hex/FFFFFF
 $color-black: rgb(0, 0, 0); // Name: Black, Hex: #000000 oder #000, https://www.htmlcsscolor.com/hex/000000
 $color-gray: rgb(128, 128, 128); // Name: Gray, Hex: #808080, https://www.htmlcsscolor.com/hex/808080
-
-// -----------------------------------------------------------------------------
-//
-// Farbfunktionen
-//
-// -----------------------------------------------------------------------------
-
-/// Hellt eine Farbe leicht auf.
-/// Verwendung: color: tint(pink, 30%);
-/// @access public
-/// @param {Color} $color - zu färbende Farbe
-/// @param {Number} $percentage - Prozent von `$color` welcher die Farbe wiedergegeben werden soll
-/// @return {Color}
-
-@function tint($color, $percentage) {
-  @return mix($color-white, $color, $percentage);
-}
-
-/// Verdunkelt eine Farbe leicht.
-/// Verwendung: color: shade(pink, 30%);
-/// @access public
-/// @param {Color} $color - zu verdunkelnde Farbe
-/// @param {Number} $percentage - Prozent von `$color` welcher die Farbe wiedergegeben werden soll
-/// @return {Color}
-
-@function shade($color, $percentage) {
-  @return mix($color-black, $color, $percentage);
-}

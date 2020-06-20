@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
-@import "./gest-colors.scss";
-@import "./gest-fonts.scss";
+@import '../base/colors_gest';
+@import '../base/fonts';
 
 @mixin button($height: 40px) {
   $border-radius: #{$height / 2};
@@ -41,14 +41,4 @@
     text-decoration: underline !important;
     background: transparent !important;
   }
-}
-
-@mixin post_preview {
-  $border-radius: 12px;
-
-  -webkit-border-radius: $border-radius;
-  -moz-border-radius: $border-radius;
-  border-radius: $border-radius;
-  background: shade($color-white, 5%) !important;
-  overflow: hidden;
 }

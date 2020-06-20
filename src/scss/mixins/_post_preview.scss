@@ -1,0 +1,13 @@
+@charset 'UTF-8';
+
+@import '../base/colors_gest';
+
+@mixin post_preview {
+  $border-radius: 12px;
+
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+  background: shade($color-white, 5%) !important;
+  overflow: hidden;
+}

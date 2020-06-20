@@ -1,5 +1,8 @@
 @charset 'UTF-8';
 
+@import 'colors';
+@import 'colors_gest';
+
 // =============================================================================
 //
 // Sassy CSS (SCSS) für die Website der GEST: Neve Colors
@@ -14,10 +17,6 @@
 //   - https://sass-guidelin.es/de/
 //
 // =============================================================================
-
-@import './gest-colors.scss';
-
-@use "sass:map";
 
 $neve-color-map: (
   #000000: $color-black,
@@ -47,7 +46,7 @@ $neve-color-map: (
 /// @return {Color}
 
 @function map-neve-color($color) {
-  $mapped: get($neve-color-map, $color);
+  $mapped: map-get($neve-color-map, $color);
   @if $mapped {
     @return $mapped;
   }

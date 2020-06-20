@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@import './gest-mixins.scss';
+@import '../mixins/button';
 
 div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form .wpforms-page-button {
   @include button(28px);
