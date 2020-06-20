@@ -1,0 +1,10 @@
+*       text=auto
+*.css   text eol=lf
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.md    text eol=lf
+*.sass  text eol=lf
+*.yml   text eol=lf
+
+*.jpg   binary
+*.png   binary
