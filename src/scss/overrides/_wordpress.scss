@@ -35,6 +35,16 @@
   }
 }
 
+// Anpassungen für Bildblöcke in WordPress.
+.wp-block-image {
+  figcaption {
+    font-style: italic;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    text-align: right;
+  }
+}
+
 // Anpassung der Download-Buttons für die Downloads-Seite.
 .wp-block-file {
   a.wp-block-file__button {
