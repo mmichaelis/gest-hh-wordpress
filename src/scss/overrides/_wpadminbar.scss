@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 @media (max-width: 600px) {
   // Admin Bar Icons in der mobilen Ansicht auf das nötigste reduzieren.
@@ -10,7 +10,7 @@
 
   #wpadminbar {
     position: absolute;
-    top: 0px;
+    top: 0;
     max-width: fit-content;
     min-width: 46px !important;
   }
@@ -21,7 +21,7 @@
 
   // Entfernen des eigenartigen Margins bei kleinen Bildschirmen.
   html, body {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
   }
 }
 

@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 @import 'import-once';
 
 // =============================================================================
@@ -27,9 +27,9 @@
 // Neve Standard Fonts als Fallback erhalten.
 $font-stack-neve: ('Graphik', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', sans-serif);
 $font-stack-gest: (
-  'text': list-join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
-  'heading': list-join(('Open Sans Regular', 'Open Sans'), $font-stack-neve),
-  'logo': list-join(('Mitr Regular', 'Mitr'), $font-stack-neve)
+  'text': (('Open Sans Regular', 'Open Sans'), $font-stack-neve),
+  'heading': (('Open Sans Regular', 'Open Sans'), $font-stack-neve),
+  'logo': (('Mitr Regular', 'Mitr'), $font-stack-neve)
 );
 
 /// Stellt sicher, dass der Font-Weight in den bereitgestellten Font-Varianten

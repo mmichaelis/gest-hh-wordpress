@@ -1,6 +1,7 @@
 tmp/
 target/
 node_modules/
+.idea/
 
 *.bak
 *.log

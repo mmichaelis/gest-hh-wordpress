@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 // =============================================================================
 //
 // Sassy CSS (SCSS) für die Website der GEST: Overrides für Neve Theme
@@ -135,7 +135,7 @@ ul[id^="nv-primary-navigation"] .current-menu-item > a {
 }
 
 footer {
-  background-color: map-font-color(#fff);
+  background-color: map-neve-color(#fff);
 }
 
 .nv-page-title-wrap.nv-big-title .nv-page-title {
@@ -463,7 +463,7 @@ article .article-content-col {
   .site-logo small {
     display: none;
   }
-  
+
   // GEST-Logo: Keine Mindestbreite mehr notwendig, da Text kürzer.
   .site-logo .nv-title-tagline-wrap {
     min-width: inherit;
@@ -490,7 +490,7 @@ article .article-content-col {
   -webkit-border-radius: $border-radius;
   -moz-border-radius: $border-radius;
   border-radius: $border-radius;
-  
+
   overflow: hidden;
 }
 

@@ -1,12 +1,13 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 @media print {
   // https://www.lockedownseo.com/chrome-print-preview-differs-from-dev-tools/
+  //noinspection CssUnknownProperty
   * {
     -webkit-transition: none !important;
     transition: none !important;
   }
-  
+
   body, a {
     color: #000 !important;
   }

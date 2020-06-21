@@ -1,5 +1,6 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
+@import '../base/colors';
 @import '../base/colors_gest';
 @import '../base/fonts';
 
@@ -22,7 +23,7 @@
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  
+
   & > * {
     text-decoration: none !important;
     background: transparent !important;

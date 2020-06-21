@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 @import '../base/colors_gest';
 @import '../mixins/button';
@@ -8,7 +8,7 @@
   background: transparent !important;
   width: 100%;
   text-align: right;
-  
+
   .uagb-post__link {
     @include button(24px);
   }
@@ -40,7 +40,7 @@
 .wp-block-uagb-table-of-contents {
   .uagb-toc__wrap {
     $border-radius: 12px;
-  
+
     -webkit-border-radius: $border-radius;
     -moz-border-radius: $border-radius;
     border-radius: $border-radius;
@@ -66,7 +66,7 @@
   }
 
   .uagb-post-grid {
-    padding: 0px;
+    padding: 0;
     width: 100%;
 
     .slick-dots {

@@ -1,6 +1,6 @@
 {
   "name": "gest-hh-wordpress",
-  "version": "2020.6.20.1",
+  "version": "2020.6.21.1",
   "description": "Styling for website https://gest-hamburg.de/",
   "homepage": "https://github.com/mmichaelis/gest-hh-wordpress",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/mmichaelis/gest-hh-wordpress.git"
   },
   "license": "Unlicense",
-  "private": "true",
+  "private": true,
   "author": {
     "name": "Mark Michaelis",
     "url": "https://about.me/michaelismark"
@@ -20,6 +20,6 @@
   "scripts": {
     "watch": "node-sass --indent-type space --indent-width 2 --output-style expanded --linefeed lf --include-path include --embed-source-map --output target/watch/css --watch src/scss",
     "build": "node-sass --indent-type space --indent-width 2 --output-style expanded --linefeed lf --include-path include --embed-source-map --output target/dist/css src/scss",
-    "clean" : "rimraf target"
+    "clean": "rimraf target"
   }
 }
