@@ -1,7 +1,17 @@
 @charset "UTF-8";
 
+/* ---------------------------------------[+ enhanced-tooltipglossary.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: CM Tooltip Glossary
+ * URL: https://de.wordpress.org/plugins/enhanced-tooltipglossary/
+ */
+
 @media print {
   span.glossaryLink, a.glossaryLink {
     border-bottom: none;
   }
 }
+
+/* ---------------------------------------[- enhanced-tooltipglossary.scss -] */

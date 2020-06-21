@@ -2,6 +2,14 @@
 
 @import '../mixins/button';
 
+/* --------------------------------------------------[+ cookie-notice.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: Cookie Notice for GDPR & CCPA
+ * URL: https://de.wordpress.org/plugins/cookie-notice/
+ */
+
 #cookie-notice {
   z-index: 999950 !important;
   background: rgba(0, 0, 0, 0.75) !important;
@@ -21,3 +29,5 @@
     display: none;
   }
 }
+
+/* --------------------------------------------------[- cookie-notice.scss -] */

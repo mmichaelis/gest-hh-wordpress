@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+/* -----------------------------------------------------[+ gtranslate.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: Translate WordPress with GTranslate
+ * URL: https://de.wordpress.org/plugins/gtranslate/
+ */
+
 #gtranslate_wrapper {
   left: 10px !important;
   z-index: 999800 !important;
@@ -40,3 +48,5 @@ footer {
     display: none;
   }
 }
+
+/* -----------------------------------------------------[- gtranslate.scss -] */

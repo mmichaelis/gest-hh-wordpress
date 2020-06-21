@@ -4,6 +4,14 @@
 @import '../mixins/button';
 @import '../mixins/post_preview';
 
+/* ------------------------------------------------------------[+ uag.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: Gutenberg Blocks – Ultimate Addons for Gutenberg
+ * URL: https://de.wordpress.org/plugins/ultimate-addons-for-gutenberg/
+ */
+
 .uagb-post__cta {
   background: transparent !important;
   width: 100%;
@@ -78,3 +86,5 @@
     }
   }
 }
+
+/* ------------------------------------------------------------[- uag.scss -] */

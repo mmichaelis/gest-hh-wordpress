@@ -2,6 +2,14 @@
 
 @import '../mixins/button';
 
+/* --------------------------------------------------------[+ wpforms.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: Contact Form by WPForms – Drag & Drop Form Builder for WordPress
+ * URL: https://de.wordpress.org/plugins/wpforms-lite/
+ */
+
 div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form .wpforms-page-button {
   @include button(28px);
   padding-left: 12px;
@@ -15,3 +23,5 @@ div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-contain
     }
   }
 }
+
+/* --------------------------------------------------------[- wpforms.scss -] */

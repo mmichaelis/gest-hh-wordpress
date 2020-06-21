@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* ----------------------------------------------------------[+ print.scss +] */
+/*
+ * Generelle Anpassungen für die Druckausgabe.
+ */
 @media print {
   // https://www.lockedownseo.com/chrome-print-preview-differs-from-dev-tools/
   //noinspection CssUnknownProperty
@@ -28,3 +32,5 @@
     content: " (" attr(href) ")";
   }
 }
+
+/* ----------------------------------------------------------[- print.scss -] */

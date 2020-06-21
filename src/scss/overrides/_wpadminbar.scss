@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/* -----------------------------------------------------[+ wpadminbar.scss +] */
+/*
+ * Anpassungen speziell für die Admin-Bar von WordPress.
+ */
+
 @media (max-width: 600px) {
   // Admin Bar Icons in der mobilen Ansicht auf das nötigste reduzieren.
   // Da Plugins u. U. Elemente hinzufügen, wird hier eine Whitelist
@@ -37,3 +42,5 @@
     display: none !important;
   }
 }
+
+/* -----------------------------------------------------[- wpadminbar.scss -] */

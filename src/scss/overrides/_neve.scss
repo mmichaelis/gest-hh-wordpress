@@ -1,18 +1,12 @@
 @charset "UTF-8";
-// =============================================================================
-//
-// Sassy CSS (SCSS) für die Website der GEST: Overrides für Neve Theme
-//
-// Hinweis: Zeilenkommentare (//) werden bei der CSS Erzeugung entfernt,
-//          Blockkommentare (/* ... */) hingegen werden beibehalten.
-//
-// Links:
-//   - https://www.htmlcsscolor.com/
-//   - https://www.rgbtohex.net/
-//   - https://www.sassmeister.com/
-//   - https://sass-guidelin.es/de/
-//
-// =============================================================================
+
+/* -----------------------------------------------------------[+ neve.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Theme: Neve
+ * URL: https://de.wordpress.org/themes/neve/
+ */
 
 @import '../base/fonts';
 @import '../mixins/post_preview';
@@ -552,3 +546,5 @@ article .article-content-col {
     }
   }
 }
+
+/* -----------------------------------------------------------[- neve.scss -] */

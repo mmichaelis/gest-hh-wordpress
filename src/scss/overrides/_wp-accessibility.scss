@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+/* -----------------------------------------------[+ wp-accessibility.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: WP Accessibility
+ * URL: https://de.wordpress.org/plugins/wp-accessibility/
+ */
+
 .a11y-toolbar {
   -webkit-box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.5);
@@ -51,3 +59,5 @@
 
   }
 }
+
+/* -----------------------------------------------[- wp-accessibility.scss -] */
