@@ -37,6 +37,10 @@
 
 // Anpassungen für Bildblöcke in WordPress.
 .wp-block-image {
+  img {
+    margin: 0 auto;
+    display: block;
+  }
   figcaption {
     font-style: italic;
     font-size: 0.8em;
