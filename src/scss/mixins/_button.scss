@@ -5,9 +5,9 @@
 @import '../base/fonts';
 
 @mixin button($height: 40px) {
-  $border-radius: #{$height / 2};
-  $padding-width: #{$height / 6};
-  $font-size: #{$height * 4 / 6};
+  $border-radius: #{round($height / 2)};
+  $padding-width: #{round($height / 6)};
+  $font-size: #{round($height * 4 / 6)};
 
   @include font-text;
 
