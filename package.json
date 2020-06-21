@@ -18,8 +18,8 @@
     "sass-migrator": "^1.2.3"
   },
   "scripts": {
-    "watch": "node-sass --indent-type space --indent-width 2 --output-style expanded --linefeed lf --include-path include --embed-source-map --output target/watch/css --watch src/scss",
-    "build": "node-sass --indent-type space --indent-width 2 --output-style expanded --linefeed lf --include-path include --embed-source-map --output target/dist/css src/scss",
+    "build": "node-sass --output-style expanded --indent-type space --indent-width 2 --linefeed lf --include-path include --source-map-embed --precision 0 --output target src/scss",
+    "watch": "npm run build && npm run build -- --watch",
     "clean": "rimraf target"
   }
 }

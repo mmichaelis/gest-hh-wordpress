@@ -1,9 +1,44 @@
 # gest-hh-wordpress
 
-Docker-Compose basiertes Setup für die Website der GEST, Gemeinschaft der Elternräte an Stadtteilschulen in Hamburg.
+> **German Content**
+>
+> This repository contains SCSS files for creating a custom CSS for WordPress
+> for the website [gest-hamburg.de](https://gest-hamburg.de/). You will find
+> descriptions and commit messages in German, as it is a German website.
 
-https://github.com/sass/node-sass#command-line-interface
-https://stackoverflow.com/questions/31448114/how-to-compile-or-convert-sass-scss-to-css-with-node-sass-no-ruby
+In diesem Repository finden Sie die SCSS-Quellen zur Erstellung eines
+angepassten CSS for die Site [gest-hamburg.de](https://gest-hamburg.de/),
+die auf WordPress basiert.
+
+## Verwendung
+
+### Voraussetzungen
+
+* NodeJS, inklusive `npm`.
+
+    Installation unter Windows etwa mittels [Scoop](https://github.com/lukesampson/scoop):
+
+    ```bash
+    λ scoop install nodejs
+    ```
+
+### Erstellung der CSS-Datei
+
+* Einmaliges Erstellen von `custom-main.css`:
+
+    ```bash
+    λ npm run build
+    ```
+
+    Das Ergebnis befindet sich anschließend in `target/`.
+
+* Automatisches Erstellen von `custom-main.css` bei Änderungen an den SCSS Dateien:
+
+    ```bash
+    λ npm run build
+    ```
+
+    Das Ergebnis befindet sich jewils in `target/`.
 
 ## Referenzen
 
