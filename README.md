@@ -40,6 +40,13 @@ die auf WordPress basiert.
 
     Das Ergebnis befindet sich jewils in `target/`.
 
+### Verwendung in WordPress
+
+Um das Ergebnis in WordPress zu verwenden, muss der sogenannte _Customizer_
+im Administrationsbereich _Design_ aufgerufen werden. Dort gibt es einen
+Bereich _Zusätzliches CSS_. In diesen Bereich kann das entsprechende CSS
+kopiert werden.
+
 ## Referenzen
 
 Folgende Seiten waren mir bei der Entwicklung dienlich:
