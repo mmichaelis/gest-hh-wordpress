@@ -11,6 +11,8 @@
 @import '../base/fonts';
 @import '../mixins/post_preview';
 @import '../base/colors_neve';
+@import '../base/colors';
+@import '../base/colors_gest';
 
 .wp-block-button a, a.button.close-responsive-search, .button, button, input[type=button], .btn, input[type="submit"] {
   font-weight: map-font-weight(600) !important;
@@ -431,6 +433,42 @@ hr {
 // werden kann.
 body {
   color: #000;
+}
+
+
+
+// Regeln für einen dunklen Rahmen um den Hauptbereich.
+
+body {
+  background-color: fade(shade($color-blue, 00%), 10%);
+}
+
+.footer-bottom-inner {
+  background-color: fade(shade($color-blue, 80%), 10%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer-bottom-inner {
+    background-color: fade(shade($color-blue, 90%), 10%);
+  }
+  // Dunkler Rahmen um Hauptteil.
+  body {
+    background-color: fade(shade($color-blue, 70%), 10%);
+  }
+}
+
+// Dunkler Hintergrund: Hervorheben des Hauptbereichs
+
+.hfg_header .header-main-inner .container,
+#content > .container,
+.footer-top-inner > .container {
+  background-color: map-neve-color(#fff);
+}
+
+// Dunkler Hintergrund: Einige Bereiche müssen Transparent sein.
+
+.nv-navbar, .hfg_header .header-main-inner, footer, .footer-top-inner {
+  background-color: initial !important;
 }
 
 // Gleicht das Layout der Beitragsübersicht so an, dass sie ähnlich
