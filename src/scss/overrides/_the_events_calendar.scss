@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+@import '../base/colors_gest';
+@import '../mixins/button';
+@import '../mixins/post_preview';
+
+/* --------------------------------------------[+ the_events_calendar.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: The Events Calendar
+ * URL: https://de.wordpress.org/plugins/the-events-calendar/
+ */
+
+@import '../base/colors_neve';
+
+.tribe-common .tribe-common-l-container, #tribe-events-pg-template, .tribe-events-pg-template {
+  max-width: 748px;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: map-neve-color(#fff);
+}
+@media (min-width: 576px) {
+  .tribe-common .tribe-common-l-container, #tribe-events-pg-template, .tribe-events-pg-template {
+    max-width: 992px;
+  }
+}
+@media (min-width: 960px) {
+  .tribe-common .tribe-common-l-container, #tribe-events-pg-template, .tribe-events-pg-template {
+    max-width: 1170px;
+  }
+}
+
+/* --------------------------------------------[- the_events_calendar.scss .] */

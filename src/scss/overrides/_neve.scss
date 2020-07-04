@@ -471,6 +471,13 @@ body {
   background-color: initial !important;
 }
 
+// Für den dunklen Hintergrund benötigen wir mehr Padding.
+
+#content.neve-main > .container > .row > .col {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
 // Gleicht das Layout der Beitragsübersicht so an, dass sie ähnlich
 // zu der Darstellung auf der Hauptseite ist (gerendert vom UAG
 // Plugin).
@@ -530,6 +537,16 @@ article .article-content-col {
 .nv-post-thumbnail-wrap img {
   margin-left: auto;
   margin-right: auto;
+}
+
+// Suchbildschirm: Hintergrund soll ein wenig durchscheinen.
+.menu-item-nav-search.canvas .nv-nav-search {
+  background-color: rgba(250, 250, 250, 0.95);
+
+  .form-wrap {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
 
 @media print {
