@@ -52,6 +52,19 @@
   }
 }
 
+.wp-block-uagb-blockquote {
+  margin-bottom: 1em;
+  margin-top: 1em;
+
+  .uagb-blockquote__content {
+    font-style: italic;
+  }
+
+  .uagb-blockquote a {
+    text-decoration: none !important;
+  }
+}
+
 @media print {
   .uagb-post__inner-wrap {
     background: unset !important;
