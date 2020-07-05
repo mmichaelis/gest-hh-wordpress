@@ -489,7 +489,6 @@ body {
 }
 
 // Dunkler Hintergrund: Einige Bereiche müssen Transparent sein.
-
 .nv-navbar,
 .hfg_header .header-main-inner,
 footer,
@@ -497,8 +496,12 @@ footer,
   background-color: initial !important;
 }
 
-// Für den dunklen Hintergrund benötigen wir mehr Padding.
+// Hängt den Footer direkt an den Main-Bereich, ohne Space dazwischen.
+#content.neve-main {
+  display: flex;
+}
 
+// Für den dunklen Hintergrund benötigen wir mehr Padding.
 #content.neve-main > .container > .row > .col {
   padding-left: 3%;
   padding-right: 3%;
