@@ -9,23 +9,24 @@
   // Admin Bar Icons in der mobilen Ansicht auf das nötigste reduzieren.
   // Da Plugins u. U. Elemente hinzufügen, wird hier eine Whitelist
   // verwendet.
-  #wpadminbar li[id*="wp-admin-bar"] {
+  #wpadminbar li[id*='wp-admin-bar'] {
     display: none !important;
   }
 
   #wpadminbar {
-    position: absolute;
-    top: 0;
     max-width: fit-content;
     min-width: 46px !important;
+    position: absolute;
+    top: 0;
   }
 
-  #wpadminbar #wp-admin-bar-edit {
+  #wp-admin-bar-edit {
     display: initial !important;
   }
 
   // Entfernen des eigenartigen Margins bei kleinen Bildschirmen.
-  html, body {
+  html,
+  body {
     margin-top: 0 !important;
   }
 }

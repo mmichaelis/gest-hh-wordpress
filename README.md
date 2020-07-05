@@ -55,3 +55,7 @@ Folgende Seiten waren mir bei der Entwicklung dienlich:
 
 * [CSS { In Real Life } | A Modern Front End Workflow Part 1: Building a Project Starter with NPM Scripts](https://css-irl.info/a-modern-front-end-workflow-part-1/)
 * [Introducing Sass Modules | CSS-Tricks](https://css-tricks.com/introducing-sass-modules/)
+* [stylelint/stylelint: A mighty, modern style linter](https://github.com/stylelint/stylelint)
+* [bjankord/stylelint-config-sass-guidelines: ⚙ A stylelint config inspired by https://sass-guidelin.es/](https://github.com/bjankord/stylelint-config-sass-guidelines)
+* [postcss/postcss: Transforming styles with JS plugins](https://github.com/postcss/postcss)
+* [postcss/autoprefixer: Parse CSS and add vendor prefixes to rules by Can I Use](https://github.com/postcss/autoprefixer)

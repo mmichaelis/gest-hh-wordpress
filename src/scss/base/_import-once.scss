@@ -14,8 +14,8 @@ $imported-once-files: () !default;
 
 @function not-imported($name) {
   $imported-once-files: $imported-once-files !global;
-  $module_index: index($imported-once-files, $name);
-  @if (($module_index == null) or ($module_index == false)) {
+  $module-index: index($imported-once-files, $name);
+  @if (($module-index == null) or ($module-index == false)) {
     $imported-once-files: append($imported-once-files, $name) !global;
     @return true;
   }

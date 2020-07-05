@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import '../base/colors_gest';
+@import 'src/scss/base/colors-gest';
 @import '../mixins/button';
 
 /* ------------------------------------------------------[+ wordpress.scss +] */
@@ -12,38 +12,35 @@
 .wp-block-media-text {
   $border-radius: 12px;
 
+  background: shade($color-white, 5%) !important;
+  border-radius: $border-radius;
+  justify-items: center;
   margin-bottom: 20px;
+  overflow: hidden;
   padding-left: 20px;
 
-  justify-items: center;
-
-  -webkit-border-radius: $border-radius;
-  -moz-border-radius: $border-radius;
-  border-radius: $border-radius;
-
-  background: shade($color-white, 5%) !important;
-  overflow: hidden;
-
   .wp-block-media-text__content {
-    padding-top: 20px;
     padding-bottom: 0;
+    padding-top: 20px;
   }
 
-  & > figure > img, .wp-block-media-text > figure > video {
-    width: initial;
+  & > figure > img,
+  .wp-block-media-text > figure > video {
     max-width: 100%;
+    width: initial;
   }
 }
 
 // Anpassungen für Bildblöcke in WordPress.
 .wp-block-image {
   img {
-    margin: 0 auto;
     display: block;
+    margin: 0 auto;
   }
+
   figcaption {
-    font-style: italic;
     font-size: 0.8em;
+    font-style: italic;
     margin-top: 0.2em;
     text-align: right;
   }
@@ -63,19 +60,15 @@
 .wp-block-cover {
   $border-radius: 12px;
 
-  -webkit-border-radius: $border-radius;
-  -moz-border-radius: $border-radius;
   border-radius: $border-radius;
-  overflow: hidden;
   margin-bottom: 12px;
+  overflow: hidden;
 
   // Chrome hat Probleme mit fixed Backgrounds und Kantenrundungen:
   // An bestimmten Scrollpositionen streckt sich das Bild ungewollt.
   // Aus diesem Grund wird für Parallax-Cover die Kantenrundung
   // unterdrückt.
   &.wp-block-cover.has-parallax {
-    -webkit-border-radius: unset;
-    -moz-border-radius: unset;
     border-radius: unset;
   }
 }
@@ -84,13 +77,13 @@
   // Stellt sicher, dass Cover-Bilder bei der Print-Ausgabe korrekt
   // angezeigt werden.
   .wp-block-cover {
-    width: 100%;
-
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-attachment: unset !important;
     background-position-x: unset !important;
     background-position-y: unset !important;
-    background-attachment: unset !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+
+    width: 100%;
 
     &.has-background-dim {
       background-color: transparent !important;

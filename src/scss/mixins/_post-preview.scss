@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@import '../base/colors';
+@import 'src/scss/base/colors-gest';
+
+@mixin post-preview {
+  $border-radius: 12px;
+
+  background: shade($color-white, 5%) !important;
+  border-radius: $border-radius;
+  overflow: hidden;
+}

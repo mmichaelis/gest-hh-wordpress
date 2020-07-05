@@ -25,10 +25,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install node-sass
-    - run: npm run build --if-present
+    - run: npm install postcss-cli autoprefixer
+    - run: npm install stylelint stylelint-config-sass-guidelines
+    - run: npm run github-build --if-present
     - name: Upload CSS Result
       uses: actions/upload-artifact@v1
       with:
         name: custom-main.css
         path: target/custom-main.css
-  
+

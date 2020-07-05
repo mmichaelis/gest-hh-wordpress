@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-@import '../base/colors_gest';
+@import 'src/scss/base/colors-gest';
 @import '../mixins/button';
-@import '../mixins/post_preview';
+@import '../mixins/post-preview';
 
 /* --------------------------------------------[+ the_events_calendar.scss +] */
 /*
@@ -12,21 +12,27 @@
  * URL: https://de.wordpress.org/plugins/the-events-calendar/
  */
 
-@import '../base/colors_neve';
+@import 'src/scss/base/colors-neve';
 
-.tribe-common .tribe-common-l-container, #tribe-events-pg-template, .tribe-events-pg-template {
+.tribe-common .tribe-common-l-container,
+#tribe-events-pg-template,
+.tribe-events-pg-template {
+  background-color: map-neve-color(#fff);
   max-width: 748px;
   padding-left: 3%;
   padding-right: 3%;
-  background-color: map-neve-color(#fff);
 }
 @media (min-width: 576px) {
-  .tribe-common .tribe-common-l-container, #tribe-events-pg-template, .tribe-events-pg-template {
+  .tribe-common .tribe-common-l-container,
+  #tribe-events-pg-template,
+  .tribe-events-pg-template {
     max-width: 992px;
   }
 }
 @media (min-width: 960px) {
-  .tribe-common .tribe-common-l-container, #tribe-events-pg-template, .tribe-events-pg-template {
+  .tribe-common .tribe-common-l-container,
+  #tribe-events-pg-template,
+  .tribe-events-pg-template {
     max-width: 1170px;
   }
 }

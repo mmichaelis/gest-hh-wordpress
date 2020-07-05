@@ -23,11 +23,11 @@
 }
 
 #gtranslate_selector {
+  // Aufhellen des Hintergrunds innerhalb des Dropdown-Feldes.
+  background: rgba(255, 255, 255, 0.5);
   // Bei Verwendung im Footer (dunkelblauer Hintergrund), muss die Schriftfarbe
   // einen ausreichenden Kontrast aufweisen.
   color: #000;
-  // Aufhellen des Hintergrunds innerhalb des Dropdown-Feldes.
-  background: rgba(255, 255, 255, 0.5);
   // Insbesondere auf Mobile darf die Select-Box nicht zu groß werden. Als
   // erster Ansatz reicht fit-content aus.
   max-width: fit-content;

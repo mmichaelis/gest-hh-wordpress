@@ -9,8 +9,8 @@
  */
 
 @media print {
-  span.glossaryLink, a.glossaryLink {
-    border-bottom: none;
+  .glossaryLink {
+    border-bottom: unset;
   }
 }
 

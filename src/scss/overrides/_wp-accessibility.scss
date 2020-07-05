@@ -9,15 +9,14 @@
  */
 
 .a11y-toolbar {
-  -webkit-box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.5);
 
   .offscreen {
     text-overflow: ellipsis;
   }
 
-  button:hover .offscreen, button:focus .offscreen {
+  button:hover .offscreen,
+  button:focus .offscreen {
     width: 16em !important;
   }
 
@@ -38,14 +37,14 @@
   .contrast {
     // Background Images werden versteckt. Kein Grund, Platz für sie zu reservieren.
     .wp-block-cover {
-      min-height: unset;
       height: unset;
+      min-height: unset;
     }
 
     // Entferne unschönen schwarzen Hintergrund hinter "GEST".
     .site-title {
-      color: #00FFFF !important;
       background-color: transparent !important;
+      color: #0ff !important;
     }
 
     // Mache Hamburger-Menü besser sichtbar im High-Contrast-Modus.

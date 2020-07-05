@@ -8,11 +8,11 @@
   // https://www.lockedownseo.com/chrome-print-preview-differs-from-dev-tools/
   //noinspection CssUnknownProperty
   * {
-    -webkit-transition: none !important;
     transition: none !important;
   }
 
-  body, a {
+  body,
+  a {
     color: #000 !important;
   }
 
@@ -23,13 +23,13 @@
   // Zusatztext für den Ausdruck am Ende der Seite.
   // https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
   #site-footer::after {
-    content: "Aktuelle Informationen erhalten Sie auf www.gest-hamburg.de.";
+    content: 'Aktuelle Informationen erhalten Sie auf www.gest-hamburg.de.';
   }
 
   // Link-Ziele im Ausdruck mit angeben.
   // https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
-  a[href^="http"]:not([href*="gest-hamburg"]):after {
-    content: " (" attr(href) ")";
+  a[href^='http']:not([href*='gest-hamburg'])::after {
+    content: ' (' attr(href) ')';
   }
 }
 

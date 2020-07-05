@@ -29,5 +29,5 @@
 }
 
 @function fade($color, $percentage) {
-  @return change_color($color, $saturation: $percentage)
+  @return change_color($color, $saturation: $percentage);
 }

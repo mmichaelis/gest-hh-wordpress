@@ -11,16 +11,16 @@
  */
 
 #cookie-notice {
-  z-index: 999950 !important;
   background: rgba(0, 0, 0, 0.75) !important;
+  z-index: 999950 !important;
 
   .cn-button {
     @include button(20px);
+    box-shadow: none;
     padding-left: 10px;
     padding-right: 10px;
     text-shadow: none;
     text-transform: initial;
-    box-shadow: none;
   }
 }
 

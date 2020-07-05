@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @import 'colors';
-@import 'colors_gest';
+@import 'colors-gest';
 
 // =============================================================================
 //
@@ -19,7 +19,7 @@
 // =============================================================================
 
 $neve-color-map: (
-  #000000: $color-black,
+  #000: $color-black,
   #0366d6: tint($color-blue, 9%), // #284cb3
   #24292e: shade($color-blue, 57%), // #08194a
   #292929: shade($color-blue, 56%), // #081a4c
@@ -30,7 +30,7 @@ $neve-color-map: (
   #c9c9c9: tint($color-blue, 66%), // #afbce3
   #d0effb: tint($color-blue, 85%), // #dce1f3
   #d9dbdd: tint($color-blue, 77%), // #c9d2ec
-  #dddddd: tint($color-blue, 79%), // #cdd6ee
+  #ddd: tint($color-blue, 79%), // #cdd6ee
   #ededed: tint($color-blue, 89%), // #e5e9f6
   #eee: tint($color-blue, 90%), // #e7ebf7
   #f0f0f0: tint($color-blue, 91%), // #eaedf8
@@ -50,6 +50,6 @@ $neve-color-map: (
   @if $mapped {
     @return $mapped;
   }
-  @warn "Unable to map Neve color #{$color}.";
+  @warn 'Unable to map Neve color #{$color}.';
   @return $color;
 }

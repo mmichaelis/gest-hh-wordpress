@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @import '../base/colors';
-@import '../base/colors_gest';
+@import 'src/scss/base/colors-gest';
 @import '../base/fonts';
 
 @mixin button($height: 40px) {
@@ -11,35 +11,31 @@
 
   @include font-text;
 
-  -webkit-border-radius: $border-radius;
-  -moz-border-radius: $border-radius;
-  border-radius: $border-radius;
-  color: $color-white !important;
-  font-size: $font-size;
-  padding: $padding-width;
   background: tint($color-blue, 20%) !important;
   border: solid tint($color-blue, 10%) 1px !important;
-  text-decoration: none !important;
-  display: inline-block;
+  border-radius: $border-radius;
+  color: $color-white !important;
   cursor: pointer;
+  display: inline-block;
+  font-size: $font-size;
+  padding: $padding-width;
   text-align: center;
+  text-decoration: none !important;
 
   & > * {
-    text-decoration: none !important;
     background: transparent !important;
+    text-decoration: none !important;
   }
 
   &:hover {
     background: shade($color-blue, 10%) !important;
     border: solid tint($color-blue, 10%) 1px !important;
-    -webkit-border-radius: $border-radius;
-    -moz-border-radius: $border-radius;
     border-radius: $border-radius;
     text-decoration: underline !important;
   }
 
   &:hover > * {
-    text-decoration: underline !important;
     background: transparent !important;
+    text-decoration: underline !important;
   }
 }
