@@ -65,6 +65,30 @@
   }
 }
 
+// Format für Team-Mitglieder (etwa: Über uns/Vorstand)
+.uagb-team__outer-wrap {
+  .uagb-team__social-icon {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    a {
+      display: inline-block;
+      margin-left: 0;
+      margin-right: 20px;
+
+      // Entferne die Markierung von externen Links in dieser Darstellung.
+      .wpel-icon {
+        display: none !important;
+      }
+    }
+
+    // Social Media Links verstecken, die keine gültige URL enthalten.
+    a:not([href^='http']) {
+      display: none;
+    }
+  }
+}
+
 @media print {
   .uagb-post__inner-wrap {
     background: unset !important;
