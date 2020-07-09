@@ -14,6 +14,14 @@
 
 @import 'src/scss/base/colors-neve';
 
+.single-tribe_events .tribe-events-event-meta {
+  display: flex;
+}
+
+.tribe-events-event-meta .tribe-events-meta-group {
+  flex-grow: 100;
+}
+
 .tribe-events-view,
 #tribe-events-pg-template,
 .tribe-events-pg-template {
@@ -21,8 +29,8 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 748px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 3%;
+  padding-right: 3%;
   width: 100%;
 }
 
