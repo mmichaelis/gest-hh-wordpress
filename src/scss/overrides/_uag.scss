@@ -89,6 +89,13 @@
   }
 }
 
+// Ignorieren der individuellen Größenanpassung.
+// Behebt Layout-Problem, bei dem Bilder ungewollt kleiner wurden.
+.uagb-team__image-wrap {
+  min-width: 120px !important;
+  width: 120px !important;
+}
+
 @media print {
   .uagb-post__inner-wrap {
     background: unset !important;
