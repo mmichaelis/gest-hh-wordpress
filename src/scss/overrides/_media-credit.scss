@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* ---------------------------------------------------[+ media-credit.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: Media Credit
+ * URL: https://de.wordpress.org/plugins/media-credit/
+ */
+
+.wp-block-image figcaption>.media-credit {
+  // Verschiebt den Credit-Text (Fotograf*in) analog zum runden Rahmen, wie er
+  // in _wordpress.scss definiert ist.
+  margin: -0.5em -12px 0 0;
+}
+/* ---------------------------------------------------[- media-credit.scss -] */

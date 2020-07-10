@@ -34,6 +34,9 @@
 // Anpassungen für Bildblöcke in WordPress.
 .wp-block-image {
   img {
+    $border-radius: 12px;
+
+    border-radius: $border-radius;
     display: block;
     margin: 0 auto;
   }
@@ -42,7 +45,9 @@
     font-size: 0.8em;
     font-style: italic;
     margin-top: 0.2em;
-    text-align: right;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: justify;
   }
 }
 
