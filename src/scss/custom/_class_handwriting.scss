@@ -1,0 +1,20 @@
+@charset "UTF-8";
+@import '../base/fonts';
+
+// =============================================================================
+//
+// Sassy CSS (SCSS) für die Website der GEST: Class "handwriting"
+//
+// Hinweis: Zeilenkommentare (//) werden bei der CSS Erzeugung entfernt,
+//          Blockkommentare (/* ... */) hingegen werden beibehalten.
+//
+// Eine eigene Klasse, die man an Elementen angeben kann, um eine Handschrift
+// auszuwählen.
+//
+// =============================================================================
+
+.handwriting {
+  @include font-handwriting;
+  // Empfohlene Font-Größe. Sollte nicht kleiner sein für diesen Font.
+  font-size: 24px;
+}

@@ -21,7 +21,12 @@
 // Überschriften/Text: https://fonts.google.com/specimen/Open+Sans
 // GEST CI Schriftzug: https://fonts.google.com/specimen/Mitr
 @if not-imported('gest-fonts') {
-  @import url('https://fonts.googleapis.com/css?family=Mitr:400,600|Open+Sans:400,400i,600,600i&display=swap');
+  // Alte Google-Font-API-CSS-Syntax aus Kompatibilitätsgründen.
+  @import url('https://fonts.googleapis.com/css?family=Mitr:400,600|Open+Sans:400,400i,600,600i|Kalam:700&display=swap');
+  // Die untere Syntax ist die aktuelle Google-Font-API. Leider gibt es noch
+  // Probleme, vermutlich in postcss, welches die Semicolons falsch rendert.
+  // Siehe auch: https://github.com/webpack/webpack/issues/10873
+  // @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Mitr:wght@400;600&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 }
 
 // Neve Standard Fonts als Fallback erhalten.
@@ -29,7 +34,8 @@ $font-stack-neve: ('Graphik', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', '
 $font-stack-gest: (
   'text': (('Open Sans Regular', 'Open Sans'), $font-stack-neve),
   'heading': (('Open Sans Regular', 'Open Sans'), $font-stack-neve),
-  'logo': (('Mitr Regular', 'Mitr'), $font-stack-neve)
+  'logo': (('Mitr Regular', 'Mitr'), $font-stack-neve),
+  'handwriting': (('Kalam'), $font-stack-neve)
 );
 
 /// Stellt sicher, dass der Font-Weight in den bereitgestellten Font-Varianten
@@ -50,6 +56,11 @@ $font-stack-gest: (
     @return 600;
   }
   @return 400;
+}
+
+@mixin font-handwriting {
+  font-family: map-get($font-stack-gest, 'handwriting');
+  font-weight: 700;
 }
 
 @mixin font-text {
