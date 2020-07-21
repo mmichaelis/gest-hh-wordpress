@@ -10,9 +10,9 @@
 
 @import '../base/fonts';
 @import '../mixins/post-preview';
-@import 'src/scss/base/colors-neve';
+@import '../base/colors-neve';
 @import '../base/colors';
-@import 'src/scss/base/colors-gest';
+@import '../base/colors-gest';
 
 .wp-block-button a,
 a.button.close-responsive-search,

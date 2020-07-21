@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* --------------------------------------------[+ broken-link-checker.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: Broken Link Checker
+ * URL: https://de.wordpress.org/plugins/broken-link-checker/
+ */
+
+@import '../base/colors';
+@import '../base/colors-gest';
+
+.broken_link,
+a.broken_link,
+.removed_link,
+a.removed_link {
+  cursor: not-allowed !important;
+  text-decoration-color: shade($color-red, 50%) !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dashed !important;
+
+  &::after {
+    content: '(nicht erreichbar)';
+    display: inline-block;
+    font-size: smaller;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    text-decoration: none !important;
+  }
+
+  &+.wp-block-file__button {
+    background: tint($color-gray, 20%) !important;
+    border: solid tint($color-gray, 10%) 1px !important;
+
+    &:hover {
+      background: shade($color-red, 10%) !important;
+      border: solid tint($color-red, 10%) 1px !important;
+    }
+
+    &::after {
+      content: unset !important;
+    }
+  }
+}
+
+.removed_link,
+a.removed_link {
+  text-decoration-color: shade($color-blue, 20%) !important;
+
+  &::after {
+    content: '(entfernt)';
+  }
+}
+
+
+/* --------------------------------------------[- broken-link-checker.scss -] */
