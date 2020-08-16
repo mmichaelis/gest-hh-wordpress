@@ -78,6 +78,15 @@
   }
 }
 
+.wp-block-cover-image .wp-block-cover__inner-container,
+.wp-block-cover .wp-block-cover__inner-container {
+  a,
+  a:focus,
+  a:hover {
+    color: $color-white !important;
+  }
+}
+
 @media print {
   // Stellt sicher, dass Cover-Bilder bei der Print-Ausgabe korrekt
   // angezeigt werden.
