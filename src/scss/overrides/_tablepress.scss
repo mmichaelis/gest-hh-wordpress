@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* -----------------------------------------------------[+ tablepress.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: TablePress
+ * URL: https://de.wordpress.org/plugins/tablepress/
+ */
+
+@media print {
+  // Sortier-Symbole im Druck verstecken.
+  .tablepress .sorting::after,
+  .tablepress .sorting_asc::after,
+  .tablepress .sorting_desc::after {
+    content: unset !important;
+    padding: unset !important;
+  }
+
+  // Suchfilter verstecken.
+  .dataTables_filter {
+    display: none !important;
+  }
+
+  // Bearbeiten-Link bei eigenloggten Benutzern verstecken.
+  .tablepress caption a[href*='wp-admin'] {
+    display: none !important;
+  }
+}
+
+/* -----------------------------------------------------[- tablepress.scss -] */

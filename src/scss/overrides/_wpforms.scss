@@ -25,6 +25,17 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button {
       display: none !important;
     }
   }
+
+  // Kein Formular im Ausdruck anzeigen.
+  .wpforms-container {
+    * {
+      display: none !important;
+    }
+
+    &::after {
+      content: '[Formular für den Ausdruck unterdrückt.]';
+    }
+  }
 }
 
 /* --------------------------------------------------------[- wpforms.scss -] */

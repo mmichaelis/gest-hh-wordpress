@@ -603,6 +603,12 @@ article .article-content-col {
     background: $color-white !important;
   }
 
+  .footer-bottom-inner {
+    background-color: transparent !important;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+  }
+
   #cb-row--footer-top {
     display: none;
   }
@@ -615,7 +621,7 @@ article .article-content-col {
     // GEST-Logo im Print wieder mit vollständigem Text darstellen.
     small,
     img {
-      display: unset !important;
+      display: initial !important;
     }
 
     // GEST-Logo im Print wieder Umbrüche forcieren.

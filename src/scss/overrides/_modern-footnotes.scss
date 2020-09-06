@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* -----------------------------------------------[+ modern-footnotes.scss +] */
+/*
+ * CSS-Anpassungen für:
+ *
+ * Plugin: Modern Footnotes
+ * URL: https://de.wordpress.org/plugins/modern-footnotes/
+ */
+
+@media print {
+  // Leider können wir die Fußnote nicht als Text in den Ausdruck einbinden,
+  // da der Fußnotentext nicht Bestandteil des Elements ist.
+  .modern-footnotes-footnote {
+    display: none !important;
+  }
+}
+
+/* -----------------------------------------------[- modern-footnotes.scss -] */

@@ -10,8 +10,16 @@
 
 @media print {
   .glossaryLink {
-    border-bottom: unset;
+    border-bottom: unset !important;
   }
+
+  // Glossar-Definitionen inline anzeigen; aber jene über mehrere
+  // Zeilen ausschließen, da das HTML dann direkt dargestellt werden
+  // würde.
+  span[data-cmtooltip]:not([data-cmtooltip*='!--'])::after {
+    content: ' (' attr(data-cmtooltip) ')';
+  }
+
 }
 
 /* ---------------------------------------[- enhanced-tooltipglossary.scss -] */

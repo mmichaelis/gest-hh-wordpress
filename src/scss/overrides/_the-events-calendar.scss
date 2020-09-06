@@ -49,4 +49,108 @@
   }
 }
 
+@media print {
+  .tribe-events-c-events-bar,
+  .tribe-events-c-top-bar,
+  .tribe-events-c-nav,
+  .tribe-events-c-ical {
+    display: none !important;
+  }
+
+  .tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+    min-height: unset;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .tribe-common--breakpoint-medium.tribe-common .tribe-common-l-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-details {
+    width: 100%;
+  }
+
+  // Kategorieüberschrift
+  .tribe-common--breakpoint-medium.tribe-events {
+    .tribe-events-c-breadcrumbs {
+      margin-bottom: 1em;
+    }
+
+    .tribe-events-c-breadcrumbs__list {
+      font-size: 12pt;
+      line-height: 1.1;
+    }
+  }
+
+  .tribe-common--breakpoint-medium.tribe-common {
+    // Eventüberschrift
+    .tribe-common-h4--min-medium {
+      font-size: 10pt;
+      line-height: 1.2;
+    }
+
+    // Monatsbegrenzung
+    .tribe-common-h6--min-medium {
+      font-size: 10pt;
+      line-height: 1.1;
+    }
+
+    // Datumszeile und Eventtext
+    .tribe-common-b2 {
+      font-size: 9pt;
+      line-height: 1;
+    }
+  }
+
+  .tribe-common--breakpoint-medium.tribe-events {
+    // Abstände zwischen Terminen
+    .tribe-events-calendar-list__event-row {
+      margin-bottom: 8px;
+      margin-left: -24px;
+      margin-right: -24px;
+      margin-top: 8px !important;
+    }
+
+    // Abstand Event-Titel und -Beschreibung
+    .tribe-events-calendar-list__event-venue {
+      margin-bottom: 2px;
+    }
+
+    // Abstand Event-Titel und -Beschreibung
+    .tribe-events-calendar-list__event-description {
+      margin-top: 2px;
+    }
+
+    .tribe-events-calendar-list__event-row:last-child {
+      margin-bottom: 10px;
+    }
+
+    .tribe-events-calendar-list__event-datetime-wrapper,
+    .tribe-events-calendar-list__event-title {
+      margin: 0 0 2px;
+    }
+
+    .tribe-events-calendar-list__event-datetime {
+      font-size: 7pt;
+    }
+
+    // Empfohlen Text (GEST-Sitzungen) ausblenden.
+    .tribe-events-calendar-list__event-datetime-featured-text {
+      display: none;
+    }
+
+    // Abstand Datumsspalte zu Terminspalte
+    .tribe-events-calendar-list__event-date-tag {
+      min-width: 90px;
+      width: unset;
+    }
+  }
+
+  .tribe-events .tribe-events-calendar-list__event-date-tag-weekday {
+    line-height: unset;
+  }
+}
+
 /* --------------------------------------------[- the_events_calendar.scss .] */

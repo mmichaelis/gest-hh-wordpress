@@ -6,9 +6,13 @@
  */
 /*noinspection CssUnknownProperty*/
 @media print {
-  // https://www.lockedownseo.com/chrome-print-preview-differs-from-dev-tools/
   //noinspection CssUnknownProperty
   * {
+    float: none !important;
+    max-width: 100% !important;
+    // https://www.bennadel.com/blog/851-fixing-divs-that-cause-content-truncation-when-printing.htm
+    overflow: visible !important;
+    // https://www.lockedownseo.com/chrome-print-preview-differs-from-dev-tools/
     transition: none !important;
   }
 
@@ -17,21 +21,53 @@
     color: #000 !important;
   }
 
+  body {
+    background: #fff;
+  }
+
+  // Keine Reduzierung der Font-Größe für Print-Ausgabe: Das führt zumindest
+  // in Chrome teilweise dazu, dass Zeichen am Ende der Seite abgeschnitten
+  // und die untere Hälfte auf der anderen Seite gedruckt werden.
+  // body {
+  //   font-size: 11pt;
+  // }
+
   a {
     text-decoration: none !important;
   }
 
-  // Zusatztext für den Ausdruck am Ende der Seite.
-  // https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
-  #site-footer::after {
-    content: 'Aktuelle Informationen erhalten Sie auf www.gest-hamburg.de.';
+  #site-footer {
+    font-size: 8pt;
+
+    // Zusatztext für den Ausdruck am Ende der Seite.
+    // https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
+    a[href='/']::after {
+      content: ' (gest-hamburg.de)';
+      white-space: nowrap;
+    }
   }
 
   // Link-Ziele im Ausdruck mit angeben.
   // https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/
-  a[href^='http']:not([href*='gest-hamburg'])::after {
+  // Ausgenommen:
+  //   - Interne Links der GEST
+  //   - Links mit Anchor (evtl. zu lang, Anchor irrelevant)
+  //   - Links mit Argumenten (evtl. zu lang)
+  a[href^='http']:not([href*='gest-hamburg']):not([href*='#']):not([href*='?'])::after {
     content: ' (' attr(href) ')';
+    white-space: nowrap;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
 }
 
 /* ----------------------------------------------------------[- print.scss -] */

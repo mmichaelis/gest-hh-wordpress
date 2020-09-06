@@ -125,10 +125,16 @@
     }
   }
 
-  .uagb-toc__scroll-top {
+  .uagb-toc__scroll-top,
+  .uagb-blockquote__tweet-button {
     display: none !important;
   }
 
+  // Team-Anzeige etwa GEST-Vorstand.
+  .wp-block-uagb-team {
+    page-break-inside: avoid;
+    width: 100%;
+  }
 }
 
 /* ------------------------------------------------------------[- uag.scss -] */

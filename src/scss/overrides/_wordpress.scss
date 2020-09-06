@@ -104,6 +104,11 @@
       opacity: unset;
     }
   }
+
+  // Download-Knopf verbergen.
+  .wp-block-file__button {
+    display: none !important;
+  }
 }
 
 /* ------------------------------------------------------[- wordpress.scss -] */
