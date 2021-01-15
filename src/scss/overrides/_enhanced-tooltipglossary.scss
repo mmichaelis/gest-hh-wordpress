@@ -8,6 +8,22 @@
  * URL: https://de.wordpress.org/plugins/enhanced-tooltipglossary/
  */
 
+.glossary-container {
+  text-align: center;
+}
+
+ul#glossaryList {
+  display: inline-block;
+  width: 90%;
+
+  li {
+    float: left;
+    list-style: outside none none;
+    text-align: left;
+    width: 50%;
+  }
+}
+
 @media print {
   .glossaryLink {
     border-bottom: unset !important;
