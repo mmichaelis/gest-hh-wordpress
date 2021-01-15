@@ -22,12 +22,18 @@ die auf WordPress basiert.
     λ scoop install nodejs
     ```
 
+* Yarn installieren:
+
+   ```bash
+   npm install -g yarn
+   ```
+
 ### Erstellung der CSS-Datei
 
 * Einmaliges Erstellen von `custom-main.css`:
 
     ```bash
-    λ npm run build
+    λ yarn build
     ```
 
     Das Ergebnis befindet sich anschließend in `target/`.
@@ -35,7 +41,7 @@ die auf WordPress basiert.
 * Automatisches Erstellen von `custom-main.css` bei Änderungen an den SCSS Dateien:
 
     ```bash
-    λ npm run build
+    λ yarn watch
     ```
 
     Das Ergebnis befindet sich jewils in `target/`.

@@ -1,6 +1,6 @@
 {
   "name": "gest-hh-wordpress",
-  "version": "2020.6.21.1",
+  "version": "2021.1.15.1",
   "description": "Styling for website https://gest-hamburg.de/",
   "homepage": "https://github.com/mmichaelis/gest-hh-wordpress",
   "repository": {
@@ -28,8 +28,8 @@
     "build": "node-sass --output-style expanded --indent-type space --indent-width 2 --linefeed lf --include-path include --precision 0 --output target/build src/scss",
     "postcss": "npx postcss target/build/**/*.css --no-map --use autoprefixer --use cssnano --base target/build --dir target/",
     "lint": "npx stylelint src/scss/**/*.scss",
-    "watch": "npm run build && npm run build -- --watch",
+    "watch": "yarn build && yarn build -- --watch",
     "clean": "rimraf target",
-    "github-build": "npm run lint && npm run build && npm run postcss"
+    "github-build": "yarn lint && yarn build && yarn postcss"
   }
 }
