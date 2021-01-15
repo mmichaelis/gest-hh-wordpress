@@ -391,6 +391,12 @@ hr {
   color: map-neve-color(#404248);
 }
 
+.footer-bottom-inner,
+.footer-bottom-inner a:not(.button),
+.footer-bottom-inner .navbar-toggle {
+  color: $color-white !important;
+}
+
 .style-full-height .primary-menu-ul li:hover > a,
 .style-full-height .row .primary-menu-ul li:focus > a {
   color: map-neve-color(#404248);
