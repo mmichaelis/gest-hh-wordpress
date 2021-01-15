@@ -32,6 +32,6 @@
     "watch": "yarn build && yarn build -- --watch",
     "clean": "rimraf target",
     "update": "npm-check-updates --upgrade",
-    "github-build": "yarn lint && yarn build && yarn postcss"
+    "github-build": "yarn install & yarn lint && yarn build && yarn postcss"
   }
 }
