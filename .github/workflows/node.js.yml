@@ -24,11 +24,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install yarn
-    - run: npm install node-sass
-    - run: npm install postcss-cli autoprefixer
-    - run: npm install stylelint stylelint-config-sass-guidelines
-    - run: yarn github-build --if-present
+    - uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install # will run `yarn install` command
+    - uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: github-build # will run `yarn build` command
     - name: Upload CSS Result
       uses: actions/upload-artifact@v1
       with:
