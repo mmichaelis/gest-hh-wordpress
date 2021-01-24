@@ -8,6 +8,13 @@
  * URL: https://de.wordpress.org/plugins/enhanced-tooltipglossary/
  */
 
+.single-glossary {
+  // Versteckt Autor und Datum für einen Glossareintrag.
+  .nv-meta-list {
+    display: none;
+  }
+}
+
 .glossary-container {
   text-align: center;
 }
