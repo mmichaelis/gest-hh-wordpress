@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/* -----------------------------------------------------------[+ general.scss +] */
+/*
+ * Allgemeine CSS-Anpassungen.
+ */
+
+blockquote {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: initial !important;
+  border-left: 10px solid  rgba(0, 0, 0, 0.3) !important;
+  margin: 1.5em 10px !important;
+  padding: 0.5em 10px !important;
+  quotes: '\201C''\201D''\2018''\2019' !important;
+
+  &::before {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.3);
+    content: open-quote;
+    display: initial;
+    font-size: 4em;
+    height: initial;
+    line-height: 0.1em;
+    margin: 0;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+    width: initial;
+  }
+
+  &::after {
+    background-color: transparent;
+    content: initial !important;
+    display: initial;
+    height: initial;
+    margin: 0;
+    width: initial;
+  }
+
+  p {
+    margin-bottom: 0;
+    margin-top: 0.5em;
+  }
+
+  p:first-of-type {
+    display: inline;
+  }
+}
+
+/* -----------------------------------------------------------[- general.scss -] */
