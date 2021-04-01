@@ -14,20 +14,20 @@
     "url": "https://about.me/michaelismark"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.1",
+    "autoprefixer": "^10.2.5",
     "cssnano": "^4.1.10",
     "install": "^0.13.0",
     "node-sass": "^5.0.0",
-    "npm": "^6.14.11",
-    "postcss": "^8.2.4",
+    "npm": "^7.7.6",
+    "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
-    "sass-migrator": "^1.2.5",
-    "stylelint": "^13.8.0",
-    "stylelint-config-sass-guidelines": "^7.1.0"
+    "sass-migrator": "^1.3.7",
+    "stylelint": "^13.12.0",
+    "stylelint-config-sass-guidelines": "^8.0.0"
   },
   "scripts": {
     "build": "node-sass --output-style expanded --indent-type space --indent-width 2 --linefeed lf --include-path include --precision 0 --output ./build src/scss",
-    "postcss": "npx postcss target/build/**/*.css --no-map --use autoprefixer --use cssnano --base ./build --dir ./dist",
+    "postcss": "npx postcss ./build/**/*.css --no-map --use autoprefixer --use cssnano --base ./build --dir ./dist",
     "lint": "npx stylelint src/scss/**/*.scss",
     "watch": "npm run build && npm run build -- --watch",
     "clean": "rimraf ./build && rimraf ./dist",

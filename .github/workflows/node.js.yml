@@ -24,14 +24,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install # will run `yarn install` command
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: github-build # will run `yarn build` command
+    - run: npm run github-build --if-present
     - name: Upload CSS Result
       uses: actions/upload-artifact@v1
       with:
         name: custom-main.css
-        path: target/custom-main.css
+        path: dist/custom-main.css

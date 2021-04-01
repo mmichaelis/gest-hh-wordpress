@@ -1,5 +1,7 @@
 tmp/
 target/
+build/
+dist/
 node_modules/
 .idea/
 
