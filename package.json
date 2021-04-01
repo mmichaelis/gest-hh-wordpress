@@ -32,7 +32,7 @@
     "watch": "npm run build && npm run build -- --watch",
     "clean": "rimraf ./build && rimraf ./dist",
     "update": "npm-check-updates --upgrade",
-    "batch": "npm install & npm run lint && npm run build && npm run postcss",
-    "github-build": "npm run batch"
+    "batch": "npm run lint && npm run build && npm run postcss",
+    "github-build": "npm install && npm run batch"
   }
 }
