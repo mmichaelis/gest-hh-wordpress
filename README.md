@@ -19,32 +19,26 @@ die auf WordPress basiert.
     Installation unter Windows etwa mittels [Scoop](https://github.com/lukesampson/scoop):
 
     ```bash
-    λ scoop install nodejs
+    λ scoop install nodejs-lts
     ```
-
-* Yarn installieren:
-
-   ```bash
-   npm install -g yarn
-   ```
 
 ### Erstellung der CSS-Datei
 
 * Einmaliges Erstellen von `custom-main.css`:
 
     ```bash
-    λ yarn build
+    λ npm run batch
     ```
 
-    Das Ergebnis befindet sich anschließend in `target/`.
+    Das Ergebnis befindet sich anschließend in `dist/`.
 
 * Automatisches Erstellen von `custom-main.css` bei Änderungen an den SCSS Dateien:
 
     ```bash
-    λ yarn watch
+    λ npm run watch
     ```
 
-    Das Ergebnis befindet sich jewils in `target/`.
+    Das Ergebnis befindet sich jewils in `dist/`.
 
 ### Verwendung in WordPress
 
