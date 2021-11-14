@@ -14,16 +14,16 @@
     "url": "https://about.me/michaelismark"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "cssnano": "^4.1.10",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.10",
     "install": "^0.13.0",
-    "node-sass": "^5.0.0",
-    "npm": "^7.7.6",
-    "postcss": "^8.2.9",
-    "postcss-cli": "^8.3.1",
-    "sass-migrator": "^1.3.7",
-    "stylelint": "^13.12.0",
-    "stylelint-config-sass-guidelines": "^8.0.0"
+    "node-sass": "^6.0.1",
+    "npm": "^8.1.3",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "sass-migrator": "^1.5.2",
+    "stylelint": "^14.0.1",
+    "stylelint-config-sass-guidelines": "^9.0.1"
   },
   "scripts": {
     "build": "node-sass --output-style expanded --indent-type space --indent-width 2 --linefeed lf --include-path include --precision 0 --output ./build src/scss",
