@@ -43,8 +43,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build
-        run: pnpm build
+      - name: Lint
+        run: pnpm lint
+
+      - name: Sass
+        run: pnpm sass
+
+      - name: PostCss
+        run: pnpm postcss
 
       - name: Upload CSS Result
         uses: actions/upload-artifact@v3
