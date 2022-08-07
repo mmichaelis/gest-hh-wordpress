@@ -34,6 +34,14 @@
   width: 100%;
 }
 
+.tribe-events-content {
+  /* Fixes missing indent for lists in event content. */
+  ol,
+  ul {
+    padding: 0 0 0 20px;
+  }
+}
+
 @media (min-width: 576px) {
   .tribe-events-view,
   #tribe-events-pg-template,
