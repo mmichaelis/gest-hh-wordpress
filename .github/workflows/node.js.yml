@@ -1,32 +1,59 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: Build CSS
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
+
+env:
+  NODE_VERSION: 15
+  PNPM_VERSION: 7
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Checkout Workspace
+      uses: actions/checkout@v3
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm run github-build --if-present
+        node-version: ${{ env.NODE_VERSION }}
+    - name: Use PNPM ${{ env.PNPM_VERSION }}
+      uses: pnpm/action-setup@v2
+      with:
+        version: ${{ env.PNPM_VERSION }}
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      run: |
+        echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+    - uses: actions/cache@v3
+      name: Setup pnpm cache
+      with:
+        path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Lint
+      run: pnpm lint
+
+    - name: Build
+      run: pnpm build
+
+    - name: Post CSS
+      run: pnpm postcss
+
     - name: Upload CSS Result
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       with:
         name: custom-main.css
         path: dist/custom-main.css
