@@ -35,6 +35,13 @@
 }
 
 .tribe-events-content {
+  /* Fixes extra styling of links which collides with Visual Identity. */
+  a {
+    border-bottom: unset !important;
+    color: map-neve-color(#0366d6) !important;
+    transition: unset;
+  }
+
   /* Fixes missing indent for lists in event content. */
   ol,
   ul {
