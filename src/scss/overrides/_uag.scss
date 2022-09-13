@@ -89,6 +89,26 @@
   }
 }
 
+.uagb-post {
+  &__arrow-outside {
+    // Buttons Prev/Next were out-of-bounds. Repositioning.
+    &.uagb-post-grid {
+      .slick-next {
+        right: -25px;
+      }
+
+      .slick-prev {
+        left: -25px;
+      }
+    }
+  }
+
+  &__cta {
+    // Call-To-Action Buttons in post exceeded article boxes.
+    width: unset !important;
+  }
+}
+
 // Ignorieren der individuellen Größenanpassung.
 // Behebt Layout-Problem, bei dem Bilder ungewollt kleiner wurden.
 .uagb-team__image-wrap {
